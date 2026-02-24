@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import ranchHero from "@/assets/ranch-hero.jpg";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FadeUp } from "@/components/AnimatedSection";
@@ -23,8 +24,10 @@ const Hours = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-near-black">
-        <div className="absolute inset-0 bg-gradient-to-b from-near-black to-background" />
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+        <img src={ranchHero} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-near-black/75" />
+        <div className="absolute inset-0 bg-gradient-to-b from-near-black/60 via-transparent to-background" />
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             <p className="font-callout text-gold tracking-[0.3em] uppercase text-sm mb-3">Plan Your Visit</p>
