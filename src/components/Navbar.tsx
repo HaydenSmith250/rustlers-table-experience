@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import rustlersLogo from "@/assets/rustlers-logo.png";
 
 const navLinks = [
   { label: "Menu", href: "https://www.rustlerstable.ca/menu" },
@@ -28,8 +29,8 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="/" className="font-display text-2xl md:text-3xl font-bold tracking-wide text-primary-foreground">
-          RUSTLERS' TABLE
+        <a href="/" className="flex items-center">
+          <img src={rustlersLogo} alt="Rustlers' Table" className="h-10 md:h-12 w-auto brightness-0 invert" />
         </a>
 
         {/* Desktop nav */}
