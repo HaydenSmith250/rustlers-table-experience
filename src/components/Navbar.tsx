@@ -34,7 +34,7 @@ const Navbar = () => {
         scrolled ? "bg-near-black/95 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
         <Link to="/" className="flex items-center">
           <img src={rustlersLogo} alt="Rustlers' Table" className="h-28 md:h-36 w-auto brightness-0 invert" />
         </Link>
