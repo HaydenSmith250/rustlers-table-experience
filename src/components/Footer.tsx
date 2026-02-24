@@ -11,10 +11,11 @@ const Footer = () => {
             </p>
           </div>
           <div className="flex flex-col gap-2">
-            <a href="https://www.rustlerstable.ca/menu" className="font-body text-sm text-primary-foreground/50 hover:text-gold transition-colors">Menu</a>
-            <a href="https://www.rustlerstable.ca/reservations" className="font-body text-sm text-primary-foreground/50 hover:text-gold transition-colors">Reservations</a>
-            <a href="https://www.rustlerstable.ca/events" className="font-body text-sm text-primary-foreground/50 hover:text-gold transition-colors">Events</a>
-            <a href="https://www.rustlerstable.ca/hours" className="font-body text-sm text-primary-foreground/50 hover:text-gold transition-colors">Hours</a>
+            <a href="/menu" className="font-body text-sm text-primary-foreground/50 hover:text-gold transition-colors">Menu</a>
+            <a href="/events" className="font-body text-sm text-primary-foreground/50 hover:text-gold transition-colors">Events</a>
+            <a href="/reservations" className="font-body text-sm text-primary-foreground/50 hover:text-gold transition-colors">Reservations</a>
+            <a href="/careers" className="font-body text-sm text-primary-foreground/50 hover:text-gold transition-colors">Careers</a>
+            <a href="/hours" className="font-body text-sm text-primary-foreground/50 hover:text-gold transition-colors">Hours</a>
           </div>
           <div className="text-left md:text-right">
             <a href="tel:+12505422868" className="font-body text-sm text-primary-foreground/50 hover:text-gold transition-colors block mb-1">(250) 542-2868</a>

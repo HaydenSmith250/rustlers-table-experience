@@ -5,7 +5,9 @@ import rustlersLogo from "@/assets/rustlers-logo.png";
 
 const navLinks = [
   { label: "Menu", href: "/menu" },
+  { label: "Events", href: "/events" },
   { label: "Reservations", href: "/reservations" },
+  { label: "Careers", href: "/careers" },
   { label: "Hours", href: "/hours" },
 ];
 

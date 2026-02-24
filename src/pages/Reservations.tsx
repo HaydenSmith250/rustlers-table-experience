@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FadeUp } from "@/components/AnimatedSection";
-import { Phone, Calendar, Users, Clock } from "lucide-react";
+import { Phone, Calendar, Users, Clock, MapPin, Star, Utensils } from "lucide-react";
 
 const Reservations = () => {
   return (
@@ -25,17 +25,17 @@ const Reservations = () => {
 
       {/* Reservation options */}
       <section className="py-20 md:py-28">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-5xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Call */}
             <FadeUp>
-              <div className="bg-card border border-border p-8 text-center h-full flex flex-col items-center justify-center hover:border-gold/30 transition-colors">
-                <div className="w-16 h-16 bg-primary/20 flex items-center justify-center mb-6">
-                  <Phone className="w-7 h-7 text-gold" />
+              <div className="bg-card border border-border p-10 text-center h-full flex flex-col items-center justify-center hover:border-gold/30 transition-colors">
+                <div className="w-20 h-20 bg-primary/20 flex items-center justify-center mb-8">
+                  <Phone className="w-9 h-9 text-gold" />
                 </div>
                 <h2 className="font-display text-2xl font-bold text-foreground mb-3">Call Us</h2>
-                <p className="font-body text-muted-foreground mb-6 leading-relaxed">
-                  Give us a call to book your table directly. We're happy to accommodate special requests.
+                <p className="font-body text-muted-foreground mb-8 leading-relaxed max-w-sm">
+                  Give us a call to book your table directly. We're happy to accommodate special requests, dietary needs, and celebrations.
                 </p>
                 <a
                   href="tel:+12505422868"
@@ -48,13 +48,13 @@ const Reservations = () => {
 
             {/* Online */}
             <FadeUp delay={0.15}>
-              <div className="bg-card border border-border p-8 text-center h-full flex flex-col items-center justify-center hover:border-gold/30 transition-colors">
-                <div className="w-16 h-16 bg-primary/20 flex items-center justify-center mb-6">
-                  <Calendar className="w-7 h-7 text-gold" />
+              <div className="bg-card border border-border p-10 text-center h-full flex flex-col items-center justify-center hover:border-gold/30 transition-colors">
+                <div className="w-20 h-20 bg-primary/20 flex items-center justify-center mb-8">
+                  <Calendar className="w-9 h-9 text-gold" />
                 </div>
                 <h2 className="font-display text-2xl font-bold text-foreground mb-3">Book Online</h2>
-                <p className="font-body text-muted-foreground mb-6 leading-relaxed">
-                  Reserve your table through our online booking system — quick and easy.
+                <p className="font-body text-muted-foreground mb-8 leading-relaxed max-w-sm">
+                  Reserve your table through our online booking system — quick and easy. Select your date, time, and party size.
                 </p>
                 <a
                   href="https://www.rustlerstable.ca/reservations"
@@ -65,30 +65,104 @@ const Reservations = () => {
               </div>
             </FadeUp>
           </div>
+        </div>
+      </section>
 
-          {/* Info cards */}
-          <FadeUp delay={0.3} className="mt-12">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="bg-card border border-border p-6 flex items-start gap-4">
-                <Users className="w-6 h-6 text-gold mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="font-display text-lg font-semibold text-foreground mb-1">Large Groups</h3>
-                  <p className="font-body text-sm text-muted-foreground">
-                    For parties of 8 or more, please call ahead. 18% auto-gratuity applies to groups of 8+.
-                  </p>
+      {/* What to Expect */}
+      <section className="py-20 md:py-24 bg-card border-y border-border">
+        <div className="max-w-5xl mx-auto px-6">
+          <FadeUp>
+            <div className="text-center mb-14">
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-2">What to Expect</h2>
+              <p className="font-callout text-sm tracking-[0.2em] uppercase text-gold">Your Visit</p>
+            </div>
+          </FadeUp>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: MapPin, title: "Historic Setting", desc: "Dine at the beautiful O'Keefe Ranch, surrounded by Okanagan heritage and scenery." },
+              { icon: Utensils, title: "Bold Flavours", desc: "Certified Angus Beef®, house-smoked meats, and dishes crafted with care." },
+              { icon: Star, title: "Special Occasions", desc: "Let us know about birthdays, anniversaries, or celebrations — we'll make it memorable." },
+              { icon: Users, title: "Groups Welcome", desc: "We accommodate parties of all sizes. Call ahead for groups of 8 or more." },
+            ].map((item, i) => (
+              <FadeUp key={item.title} delay={i * 0.08}>
+                <div className="text-center p-6">
+                  <div className="w-14 h-14 bg-primary/20 flex items-center justify-center mx-auto mb-5">
+                    <item.icon className="w-7 h-7 text-gold" />
+                  </div>
+                  <h3 className="font-display text-lg font-semibold text-foreground mb-2">{item.title}</h3>
+                  <p className="font-body text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                 </div>
-              </div>
-              <div className="bg-card border border-border p-6 flex items-start gap-4">
-                <Clock className="w-6 h-6 text-gold mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="font-display text-lg font-semibold text-foreground mb-1">Hours</h3>
-                  <p className="font-body text-sm text-muted-foreground">
-                    Wed–Sat: 11:30 AM – 8 PM<br />
-                    Sunday: 10 AM – 8 PM<br />
-                    Mon–Tue: Closed
-                  </p>
+              </FadeUp>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Info cards */}
+      <section className="py-20 md:py-28">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <FadeUp>
+              <div className="bg-card border border-border p-8 h-full flex flex-col">
+                <div className="flex items-center gap-3 mb-4">
+                  <Users className="w-6 h-6 text-gold" />
+                  <h3 className="font-display text-lg font-semibold text-foreground">Large Groups</h3>
                 </div>
+                <p className="font-body text-sm text-muted-foreground leading-relaxed flex-1">
+                  For parties of 8 or more, please call ahead so we can prepare the perfect setup for your group. An 18% auto-gratuity applies to groups of 8+.
+                </p>
               </div>
+            </FadeUp>
+            <FadeUp delay={0.1}>
+              <div className="bg-card border border-border p-8 h-full flex flex-col">
+                <div className="flex items-center gap-3 mb-4">
+                  <Clock className="w-6 h-6 text-gold" />
+                  <h3 className="font-display text-lg font-semibold text-foreground">Hours</h3>
+                </div>
+                <p className="font-body text-sm text-muted-foreground leading-relaxed flex-1">
+                  Wed–Sat: 11:30 AM – 8 PM<br />
+                  Sunday: 10 AM – 8 PM<br />
+                  Mon–Tue: Closed
+                </p>
+              </div>
+            </FadeUp>
+            <FadeUp delay={0.2}>
+              <div className="bg-card border border-border p-8 h-full flex flex-col">
+                <div className="flex items-center gap-3 mb-4">
+                  <Calendar className="w-6 h-6 text-gold" />
+                  <h3 className="font-display text-lg font-semibold text-foreground">Private Events</h3>
+                </div>
+                <p className="font-body text-sm text-muted-foreground leading-relaxed flex-1">
+                  Looking to host a private event or party? Rustlers' Table offers event packages for any occasion. Call us to discuss your needs.
+                </p>
+              </div>
+            </FadeUp>
+          </div>
+        </div>
+      </section>
+
+      {/* Map */}
+      <section className="pb-20">
+        <div className="max-w-5xl mx-auto px-6">
+          <FadeUp>
+            <div className="text-center mb-8">
+              <h2 className="font-display text-2xl font-bold text-foreground mb-2">Find Us</h2>
+              <p className="font-body text-sm text-muted-foreground">O'Keefe Ranch · 9380 Hwy 97N · Vernon, BC</p>
+            </div>
+          </FadeUp>
+          <FadeUp delay={0.1}>
+            <div className="aspect-[16/7] w-full">
+              <iframe
+                title="Rustlers' Table Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2533.8!2d-119.5!3d50.3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDE4JzAwLjAiTiAxMTnCsDMwJzAwLjAiVw!5e0!3m2!1sen!2sca!4v1700000000000"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+              />
             </div>
           </FadeUp>
         </div>
