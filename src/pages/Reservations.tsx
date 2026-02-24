@@ -2,9 +2,23 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FadeUp } from "@/components/AnimatedSection";
-import { Phone, Calendar, Users, Clock, MapPin, Star, Utensils } from "lucide-react";
+import { Phone, Calendar, Users, Clock, MapPin, Star, Utensils, PartyPopper } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { useState } from "react";
 
 const Reservations = () => {
+  const [eventForm, setEventForm] = useState({ name: "", email: "", phone: "", date: "", guests: "", details: "" });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleEventSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+    setEventForm({ name: "", email: "", phone: "", date: "", guests: "", details: "" });
+    setTimeout(() => setSubmitted(false), 4000);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -23,52 +37,90 @@ const Reservations = () => {
         </div>
       </section>
 
-      {/* Reservation options */}
+      {/* Reservation - Call Only */}
       <section className="py-20 md:py-28">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Call */}
-            <FadeUp>
-              <div className="bg-card border border-border p-10 text-center h-full flex flex-col items-center justify-center hover:border-gold/30 transition-colors">
-                <div className="w-20 h-20 bg-primary/20 flex items-center justify-center mb-8">
-                  <Phone className="w-9 h-9 text-gold" />
-                </div>
-                <h2 className="font-display text-2xl font-bold text-foreground mb-3">Call Us</h2>
-                <p className="font-body text-muted-foreground mb-8 leading-relaxed max-w-sm">
-                  Give us a call to book your table directly. We're happy to accommodate special requests, dietary needs, and celebrations.
-                </p>
-                <a
-                  href="tel:+12505422868"
-                  className="inline-block font-callout text-sm tracking-widest uppercase bg-gold text-near-black px-8 py-4 hover:bg-gold-light transition-all duration-300 font-semibold"
-                >
-                  (250) 542-2868
-                </a>
+        <div className="max-w-3xl mx-auto px-6">
+          <FadeUp>
+            <div className="bg-card border border-border p-10 md:p-14 text-center flex flex-col items-center justify-center hover:border-gold/30 transition-colors">
+              <div className="w-20 h-20 bg-primary/20 flex items-center justify-center mb-8">
+                <Phone className="w-9 h-9 text-gold" />
               </div>
-            </FadeUp>
-
-            {/* Online */}
-            <FadeUp delay={0.15}>
-              <div className="bg-card border border-border p-10 text-center h-full flex flex-col items-center justify-center hover:border-gold/30 transition-colors">
-                <div className="w-20 h-20 bg-primary/20 flex items-center justify-center mb-8">
-                  <Calendar className="w-9 h-9 text-gold" />
-                </div>
-                <h2 className="font-display text-2xl font-bold text-foreground mb-3">Book Online</h2>
-                <p className="font-body text-muted-foreground mb-8 leading-relaxed max-w-sm">
-                  Reserve your table through our online booking system — quick and easy. Select your date, time, and party size.
-                </p>
-                <a
-                  href="https://www.rustlerstable.ca/reservations"
-                  className="inline-block font-callout text-sm tracking-widest uppercase bg-primary text-primary-foreground px-8 py-4 hover:bg-burgundy/80 transition-all duration-300"
-                >
-                  Reserve Online
-                </a>
-              </div>
-            </FadeUp>
-          </div>
+              <h2 className="font-display text-2xl font-bold text-foreground mb-3">Reserve Your Table</h2>
+              <p className="font-body text-muted-foreground mb-8 leading-relaxed max-w-md">
+                Give us a call to book your table directly. We're happy to accommodate special requests, dietary needs, and celebrations.
+              </p>
+              <a
+                href="tel:+12505422868"
+                className="inline-block font-callout text-sm tracking-widest uppercase bg-gold text-near-black px-8 py-4 hover:bg-gold-light transition-all duration-300 font-semibold"
+              >
+                (250) 542-2868
+              </a>
+            </div>
+          </FadeUp>
         </div>
       </section>
 
-      {/* What to Expect */}
+      {/* Special Events Booking Form */}
+      <section className="py-20 md:py-24 bg-card border-y border-border">
+        <div className="max-w-3xl mx-auto px-6">
+          <FadeUp>
+            <div className="text-center mb-10">
+              <div className="w-14 h-14 bg-primary/20 flex items-center justify-center mx-auto mb-5">
+                <PartyPopper className="w-7 h-7 text-gold" />
+              </div>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-2">Special Events</h2>
+              <p className="font-callout text-sm tracking-[0.2em] uppercase text-gold mb-4">Private Dining & Celebrations</p>
+              <p className="font-body text-muted-foreground max-w-lg mx-auto">
+                Planning a birthday, anniversary, corporate dinner, or private gathering? Fill out the form below and we'll get back to you to arrange the perfect event.
+              </p>
+            </div>
+          </FadeUp>
+          <FadeUp delay={0.1}>
+            {submitted ? (
+              <div className="text-center py-12 bg-background border border-gold/30 p-8">
+                <Star className="w-8 h-8 text-gold mx-auto mb-4" />
+                <h3 className="font-display text-xl font-bold text-foreground mb-2">Thank You!</h3>
+                <p className="font-body text-muted-foreground">We've received your inquiry and will be in touch soon.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleEventSubmit} className="bg-background border border-border p-8 md:p-10 space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="event-name" className="font-callout text-xs tracking-widest uppercase text-muted-foreground">Name *</Label>
+                    <Input id="event-name" required value={eventForm.name} onChange={e => setEventForm(f => ({ ...f, name: e.target.value }))} className="bg-card border-border" />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="event-phone" className="font-callout text-xs tracking-widest uppercase text-muted-foreground">Phone *</Label>
+                    <Input id="event-phone" type="tel" required value={eventForm.phone} onChange={e => setEventForm(f => ({ ...f, phone: e.target.value }))} className="bg-card border-border" />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="event-email" className="font-callout text-xs tracking-widest uppercase text-muted-foreground">Email</Label>
+                    <Input id="event-email" type="email" value={eventForm.email} onChange={e => setEventForm(f => ({ ...f, email: e.target.value }))} className="bg-card border-border" />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="event-date" className="font-callout text-xs tracking-widest uppercase text-muted-foreground">Preferred Date *</Label>
+                    <Input id="event-date" type="date" required value={eventForm.date} onChange={e => setEventForm(f => ({ ...f, date: e.target.value }))} className="bg-card border-border" />
+                  </div>
+                  <div className="space-y-2 md:col-span-2">
+                    <Label htmlFor="event-guests" className="font-callout text-xs tracking-widest uppercase text-muted-foreground">Estimated Guests *</Label>
+                    <Input id="event-guests" type="number" min="1" required value={eventForm.guests} onChange={e => setEventForm(f => ({ ...f, guests: e.target.value }))} className="bg-card border-border" />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="event-details" className="font-callout text-xs tracking-widest uppercase text-muted-foreground">Event Details</Label>
+                  <Textarea id="event-details" rows={4} placeholder="Tell us about your event — type, special requests, dietary needs..." value={eventForm.details} onChange={e => setEventForm(f => ({ ...f, details: e.target.value }))} className="bg-card border-border" />
+                </div>
+                <div className="text-center pt-2">
+                  <button type="submit" className="font-callout text-sm tracking-widest uppercase bg-gold text-near-black px-10 py-4 hover:bg-gold-light transition-all duration-300 font-semibold">
+                    Submit Inquiry
+                  </button>
+                </div>
+              </form>
+            )}
+          </FadeUp>
+        </div>
+      </section>
+
       <section className="py-20 md:py-24 bg-card border-y border-border">
         <div className="max-w-5xl mx-auto px-6">
           <FadeUp>
