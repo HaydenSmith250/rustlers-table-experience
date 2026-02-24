@@ -6,7 +6,6 @@ import rustlersLogo from "@/assets/rustlers-logo.png";
 const navLinks = [
   { label: "Menu", href: "/menu" },
   { label: "Events", href: "/events" },
-  { label: "Reservations", href: "/reservations" },
   { label: "Careers", href: "/careers" },
   { label: "Hours", href: "/hours" },
 ];
@@ -57,7 +56,7 @@ const Navbar = () => {
             to="/reservations"
             className="font-callout text-sm tracking-widest uppercase bg-primary text-primary-foreground px-5 py-2.5 hover:bg-burgundy/80 transition-colors duration-300"
           >
-            Book a Table
+            Reserve a Table
           </Link>
         </div>
 
@@ -100,7 +99,7 @@ const Navbar = () => {
                 to="/reservations"
                 className="font-callout text-sm tracking-widest uppercase bg-primary text-primary-foreground px-5 py-3 text-center hover:bg-burgundy/80 transition-colors"
               >
-                Book a Table
+                Reserve a Table
               </Link>
             </div>
           </motion.div>
