@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import diningBg from "@/assets/dining-atmosphere.jpg";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FadeUp } from "@/components/AnimatedSection";
@@ -24,8 +25,10 @@ const Reservations = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-24 md:pt-44 md:pb-32 bg-near-black overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-near-black via-near-black/90 to-background" />
+      <section className="relative pt-32 pb-24 md:pt-44 md:pb-32 overflow-hidden">
+        <img src={diningBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-near-black/75" />
+        <div className="absolute inset-0 bg-gradient-to-b from-near-black/60 via-transparent to-background" />
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, hsl(var(--gold)) 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <motion.div 
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border border-gold/10"
