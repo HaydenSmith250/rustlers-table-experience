@@ -9,20 +9,38 @@ const positions = [
   {
     title: "Kitchen Prep Associate",
     icon: Utensils,
-    description:
-      "Join the Rustler's Table team as a Kitchen Prep Associate! In this fast-paced role, you'll assist in prepping fresh ingredients, cleaning dishes, and ensuring a smooth kitchen operation. Whether you're chopping, measuring, or organizing, your attention to detail and passion for food will help create delicious meals that our guests love. If you're eager to learn, thrive in a team environment, and have a love for great food, this is the perfect opportunity for you!",
+    intro: "Join the Rustler's Table team in this fast-paced kitchen role!",
+    highlights: [
+      "Prep fresh ingredients daily",
+      "Maintain a clean, organized kitchen",
+      "Chop, measure & organize with precision",
+      "Learn from experienced chefs",
+    ],
+    closing: "If you're eager to learn and love great food, this is for you.",
   },
   {
     title: "Cook",
     icon: ChefHat,
-    description:
-      "Join our team at Rustler's Table as a Cook! In this role, you'll prepare and cook tasty dishes while working in a fast-paced kitchen. If you have experience cooking, and want to be part of a great team, we'd love to hear from you!",
+    intro: "Step up to the line and cook dishes our guests rave about!",
+    highlights: [
+      "Prepare & cook quality dishes",
+      "Work in a fast-paced kitchen",
+      "Collaborate with a great team",
+      "Prior cooking experience preferred",
+    ],
+    closing: "Bring your skills and passion — we'd love to hear from you.",
   },
   {
     title: "Server",
     icon: ConciergeBell,
-    description:
-      "Join our front-of-house team at Rustler's Table! As a server, you'll provide friendly, efficient service, take orders, and ensure guests have a great dining experience. If you're upbeat, enjoy interacting with people, and thrive in a fast-paced environment, we want you on our team!",
+    intro: "Be the face of Rustler's Table on our front-of-house team!",
+    highlights: [
+      "Provide friendly, efficient service",
+      "Take orders & ensure guest satisfaction",
+      "Thrive in an upbeat environment",
+      "Great for people who love people",
+    ],
+    closing: "If you're personable and energetic, we want you on our team.",
   },
 ];
 
@@ -93,12 +111,27 @@ const Careers = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {positions.map((pos, i) => (
               <FadeUp key={pos.title} delay={i * 0.1}>
-                <div className="bg-card border border-border p-8 h-full flex flex-col hover:border-gold/30 transition-colors">
+                <div className="bg-card border border-border p-8 md:p-10 h-full flex flex-col hover:border-gold/30 transition-colors">
                   <div className="w-14 h-14 bg-primary/20 flex items-center justify-center mb-6">
                     <pos.icon className="w-7 h-7 text-gold" />
                   </div>
-                  <h3 className="font-display text-xl font-bold text-foreground mb-4">{pos.title}</h3>
-                  <p className="font-body text-sm text-muted-foreground leading-relaxed flex-1">{pos.description}</p>
+                  <h3 className="font-display text-xl font-bold text-foreground mb-3">{pos.title}</h3>
+                  <p className="font-body text-sm text-muted-foreground mb-5">{pos.intro}</p>
+                  <ul className="space-y-3 mb-6 flex-1">
+                    {pos.highlights.map((item) => (
+                      <li key={item} className="flex items-start gap-3">
+                        <CheckCircle className="w-4 h-4 text-gold mt-0.5 shrink-0" />
+                        <span className="font-body text-sm text-foreground/80">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="font-body text-xs text-muted-foreground italic mb-6">{pos.closing}</p>
+                  <a
+                    href="#apply"
+                    className="block text-center font-callout text-xs tracking-widest uppercase bg-gold text-near-black px-6 py-3 hover:bg-gold-light transition-all duration-300 font-semibold"
+                  >
+                    Apply Now
+                  </a>
                 </div>
               </FadeUp>
             ))}
@@ -134,7 +167,7 @@ const Careers = () => {
       </section>
 
       {/* Application Form */}
-      <section className="py-20 md:py-28">
+      <section id="apply" className="py-20 md:py-28 scroll-mt-24">
         <div className="max-w-3xl mx-auto px-6">
           <FadeUp>
             <div className="text-center mb-12">
