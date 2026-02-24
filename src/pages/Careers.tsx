@@ -86,8 +86,12 @@ const Careers = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-near-black">
-        <div className="absolute inset-0 bg-gradient-to-b from-near-black to-background" />
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28">
+        <div className="absolute inset-0">
+          <img src={hiringSign} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-near-black/75" />
+          <div className="absolute inset-0 bg-gradient-to-b from-near-black/60 to-background" />
+        </div>
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             <p className="font-callout text-gold tracking-[0.3em] uppercase text-sm mb-3">We're Hiring</p>
@@ -99,21 +103,6 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* Hiring Photo */}
-      <section className="py-12 md:py-16">
-        <div className="max-w-3xl mx-auto px-6">
-          <FadeUp>
-            <div className="overflow-hidden border border-border">
-              <img
-                src={hiringSign}
-                alt="Now Hiring sign in the window of Rustlers' Table"
-                className="w-full h-auto object-cover"
-                loading="lazy"
-              />
-            </div>
-          </FadeUp>
-        </div>
-      </section>
 
       {/* Open Positions */}
       <section className="py-20 md:py-28">
