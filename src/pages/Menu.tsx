@@ -290,23 +290,11 @@ const Menu = () => {
                 <div className="space-y-3 flex-1">
                   <div className="flex justify-between"><span className="font-body text-sm text-foreground">Guinness <span className="text-muted-foreground">(440ml)</span></span><span className="font-callout text-sm text-gold">$9.00</span></div>
                   <div className="flex justify-between"><span className="font-body text-sm text-foreground">Craft <span className="text-muted-foreground">(355ml)</span></span><span className="font-callout text-sm text-gold">$8.50</span></div>
-                  <div className="pl-3 flex flex-wrap gap-x-2 gap-y-1">
-                    <span className="font-body text-xs bg-border/50 text-foreground/80 px-2 py-0.5">Trash Panda IPA</span>
-                    <span className="font-body text-xs bg-border/50 text-foreground/80 px-2 py-0.5">Filthy Dirty IPA</span>
-                  </div>
+                  <p className="font-body text-xs text-muted-foreground pl-3">Trash Panda IPA · Filthy Dirty IPA</p>
                   <div className="flex justify-between"><span className="font-body text-sm text-foreground">Imported <span className="text-muted-foreground">(355ml)</span></span><span className="font-callout text-sm text-gold">$8.50</span></div>
-                  <div className="pl-3 flex flex-wrap gap-x-2 gap-y-1">
-                    <span className="font-body text-xs bg-border/50 text-foreground/80 px-2 py-0.5">Heineken</span>
-                    <span className="font-body text-xs bg-border/50 text-foreground/80 px-2 py-0.5">Corona</span>
-                  </div>
+                  <p className="font-body text-xs text-muted-foreground pl-3">Heineken · Corona</p>
                   <div className="flex justify-between"><span className="font-body text-sm text-foreground">Domestic <span className="text-muted-foreground">(355ml)</span></span><span className="font-callout text-sm text-gold">$7.50</span></div>
-                  <div className="pl-3 flex flex-wrap gap-x-2 gap-y-1">
-                    <span className="font-body text-xs bg-border/50 text-foreground/80 px-2 py-0.5">Budweiser</span>
-                    <span className="font-body text-xs bg-border/50 text-foreground/80 px-2 py-0.5">Coors Banquet</span>
-                    <span className="font-body text-xs bg-border/50 text-foreground/80 px-2 py-0.5">1516 Pale Ale</span>
-                    <span className="font-body text-xs bg-border/50 text-foreground/80 px-2 py-0.5">Blue Moon</span>
-                    <span className="font-body text-xs bg-border/50 text-foreground/80 px-2 py-0.5">Coors Light</span>
-                  </div>
+                  <p className="font-body text-xs text-muted-foreground pl-3">Budweiser · Coors Banquet · 1516 Pale Ale · Blue Moon · Coors Light</p>
                 </div>
               </div>
             </FadeUp>
@@ -322,17 +310,11 @@ const Menu = () => {
                 <div className="flex-1 space-y-4 pt-4 border-t border-border">
                   <div>
                     <p className="font-callout text-xs tracking-[0.2em] uppercase text-gold mb-2">White</p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="font-body text-sm bg-border/50 text-foreground/80 px-3 py-1">Sauvignon Blanc</span>
-                      <span className="font-body text-sm bg-border/50 text-foreground/80 px-3 py-1">Pinot Grigio</span>
-                    </div>
+                    <p className="font-body text-sm text-foreground/80">Sauvignon Blanc · Pinot Grigio</p>
                   </div>
                   <div>
                     <p className="font-callout text-xs tracking-[0.2em] uppercase text-gold mb-2">Red</p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="font-body text-sm bg-border/50 text-foreground/80 px-3 py-1">Cabernet Sauvignon</span>
-                      <span className="font-body text-sm bg-border/50 text-foreground/80 px-3 py-1">Merlot</span>
-                    </div>
+                    <p className="font-body text-sm text-foreground/80">Cabernet Sauvignon · Merlot</p>
                   </div>
                 </div>
               </div>
@@ -359,14 +341,9 @@ const Menu = () => {
                 </div>
                 <div className="flex-1 pt-4 border-t border-border">
                   <p className="font-callout text-xs tracking-[0.2em] uppercase text-gold mb-3">Available</p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="font-body text-sm bg-border/50 text-foreground/80 px-3 py-1">Absolut Vodka</span>
-                    <span className="font-body text-sm bg-border/50 text-foreground/80 px-3 py-1">Beefeater Gin</span>
-                    <span className="font-body text-sm bg-border/50 text-foreground/80 px-3 py-1">Bacardi White Rum</span>
-                    <span className="font-body text-sm bg-border/50 text-foreground/80 px-3 py-1">Jose Cuervo Tequila</span>
-                    <span className="font-body text-sm bg-border/50 text-foreground/80 px-3 py-1">40 Creek Rye</span>
-                    <span className="font-body text-sm bg-border/50 text-foreground/80 px-3 py-1">Spiced Rum</span>
-                  </div>
+                  <p className="font-body text-sm text-foreground/80 leading-relaxed">
+                    Absolut Vodka · Beefeater Gin · Bacardi White Rum · Jose Cuervo Tequila · 40 Creek Rye · Spiced Rum
+                  </p>
                 </div>
               </div>
             </FadeUp>
@@ -381,12 +358,9 @@ const Menu = () => {
                 </div>
                 <div className="flex-1 pt-4 border-t border-border">
                   <p className="font-callout text-xs tracking-[0.2em] uppercase text-gold mb-3">Available</p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="font-body text-sm bg-border/50 text-foreground/80 px-3 py-1">Irish Coffee</span>
-                    <span className="font-body text-sm bg-border/50 text-foreground/80 px-3 py-1">Mimosa</span>
-                    <span className="font-body text-sm bg-border/50 text-foreground/80 px-3 py-1">Baileys Coffee</span>
-                    <span className="font-body text-sm bg-border/50 text-foreground/80 px-3 py-1">Blueberry Tea</span>
-                  </div>
+                  <p className="font-body text-sm text-foreground/80 leading-relaxed">
+                    Irish Coffee · Mimosa · Baileys Coffee · Blueberry Tea
+                  </p>
                 </div>
               </div>
             </FadeUp>
