@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import heroImg from "@/assets/food-burger.jpg";
 
 const HeroSection = () => {
@@ -35,18 +36,18 @@ const HeroSection = () => {
             set on one of BC's most beautiful heritage sites.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href="https://www.rustlerstable.ca/reservations"
+            <Link
+              to="/reservations"
               className="inline-block font-callout text-sm tracking-widest uppercase bg-primary text-primary-foreground px-8 py-4 hover:bg-burgundy/80 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
             >
               Reserve Your Table
-            </a>
-            <a
-              href="https://www.rustlerstable.ca/menu"
+            </Link>
+            <Link
+              to="/menu"
               className="inline-block font-callout text-sm tracking-widest uppercase border border-gold/50 text-gold px-8 py-4 hover:bg-gold/10 transition-all duration-300"
             >
               View Our Menu
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>
