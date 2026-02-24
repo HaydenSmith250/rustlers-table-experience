@@ -285,42 +285,64 @@ const Menu = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* Beer */}
             <FadeUp delay={0.05}>
-              <div className="bg-card border border-border p-6">
-                <h3 className="font-display text-xl font-bold text-foreground mb-4 text-center">Beer</h3>
-                <div className="space-y-3">
+              <div className="bg-card border border-border p-6 h-full flex flex-col">
+                <h3 className="font-display text-xl font-bold text-foreground mb-5 text-center">Beer</h3>
+                <div className="space-y-3 flex-1">
                   <div className="flex justify-between"><span className="font-body text-sm text-foreground">Guinness <span className="text-muted-foreground">(440ml)</span></span><span className="font-callout text-sm text-gold">$9.00</span></div>
                   <div className="flex justify-between"><span className="font-body text-sm text-foreground">Craft <span className="text-muted-foreground">(355ml)</span></span><span className="font-callout text-sm text-gold">$8.50</span></div>
-                  <p className="font-body text-xs text-muted-foreground pl-2">Trash Panda IPA · Filthy Dirty IPA</p>
+                  <div className="pl-3 flex flex-wrap gap-x-2 gap-y-1">
+                    <span className="font-body text-xs bg-border/50 text-foreground/80 px-2 py-0.5">Trash Panda IPA</span>
+                    <span className="font-body text-xs bg-border/50 text-foreground/80 px-2 py-0.5">Filthy Dirty IPA</span>
+                  </div>
                   <div className="flex justify-between"><span className="font-body text-sm text-foreground">Imported <span className="text-muted-foreground">(355ml)</span></span><span className="font-callout text-sm text-gold">$8.50</span></div>
-                  <p className="font-body text-xs text-muted-foreground pl-2">Heineken · Corona</p>
+                  <div className="pl-3 flex flex-wrap gap-x-2 gap-y-1">
+                    <span className="font-body text-xs bg-border/50 text-foreground/80 px-2 py-0.5">Heineken</span>
+                    <span className="font-body text-xs bg-border/50 text-foreground/80 px-2 py-0.5">Corona</span>
+                  </div>
                   <div className="flex justify-between"><span className="font-body text-sm text-foreground">Domestic <span className="text-muted-foreground">(355ml)</span></span><span className="font-callout text-sm text-gold">$7.50</span></div>
-                  <p className="font-body text-xs text-muted-foreground pl-2">Budweiser · Coors Banquet · 1516 Pale Ale · Blue Moon · Coors Light</p>
+                  <div className="pl-3 flex flex-wrap gap-x-2 gap-y-1">
+                    <span className="font-body text-xs bg-border/50 text-foreground/80 px-2 py-0.5">Budweiser</span>
+                    <span className="font-body text-xs bg-border/50 text-foreground/80 px-2 py-0.5">Coors Banquet</span>
+                    <span className="font-body text-xs bg-border/50 text-foreground/80 px-2 py-0.5">1516 Pale Ale</span>
+                    <span className="font-body text-xs bg-border/50 text-foreground/80 px-2 py-0.5">Blue Moon</span>
+                    <span className="font-body text-xs bg-border/50 text-foreground/80 px-2 py-0.5">Coors Light</span>
+                  </div>
                 </div>
               </div>
             </FadeUp>
 
             {/* Wine */}
             <FadeUp delay={0.1}>
-              <div className="bg-card border border-border p-6">
-                <h3 className="font-display text-xl font-bold text-foreground mb-4 text-center">Wine</h3>
+              <div className="bg-card border border-border p-6 h-full flex flex-col">
+                <h3 className="font-display text-xl font-bold text-foreground mb-5 text-center">Wine</h3>
                 <div className="space-y-2 mb-4">
                   <div className="flex justify-between"><span className="font-body text-sm text-foreground">6oz</span><span className="font-callout text-sm text-gold">$7.50</span></div>
                   <div className="flex justify-between"><span className="font-body text-sm text-foreground">9oz</span><span className="font-callout text-sm text-gold">$10.00</span></div>
                 </div>
-                <div className="space-y-2 pt-3 border-t border-border">
-                  <p className="font-callout text-xs tracking-wider uppercase text-gold">White</p>
-                  <p className="font-body text-sm text-muted-foreground">Jackson Triggs Sauvignon Blanc · Pinot Grigio</p>
-                  <p className="font-callout text-xs tracking-wider uppercase text-gold mt-3">Red</p>
-                  <p className="font-body text-sm text-muted-foreground">Jackson Triggs Cabernet Sauvignon · Merlot</p>
+                <div className="flex-1 space-y-4 pt-4 border-t border-border">
+                  <div>
+                    <p className="font-callout text-xs tracking-[0.2em] uppercase text-gold mb-2">White</p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="font-body text-sm bg-border/50 text-foreground/80 px-3 py-1">Sauvignon Blanc</span>
+                      <span className="font-body text-sm bg-border/50 text-foreground/80 px-3 py-1">Pinot Grigio</span>
+                    </div>
+                  </div>
+                  <div>
+                    <p className="font-callout text-xs tracking-[0.2em] uppercase text-gold mb-2">Red</p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="font-body text-sm bg-border/50 text-foreground/80 px-3 py-1">Cabernet Sauvignon</span>
+                      <span className="font-body text-sm bg-border/50 text-foreground/80 px-3 py-1">Merlot</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </FadeUp>
 
             {/* Ciders */}
             <FadeUp delay={0.15}>
-              <div className="bg-card border border-border p-6">
-                <h3 className="font-display text-xl font-bold text-foreground mb-4 text-center">Ciders & Growers</h3>
-                <div className="space-y-3">
+              <div className="bg-card border border-border p-6 h-full flex flex-col">
+                <h3 className="font-display text-xl font-bold text-foreground mb-5 text-center">Ciders & Growers</h3>
+                <div className="space-y-3 flex-1">
                   <div className="flex justify-between"><span className="font-body text-sm text-foreground">Summer Peach <span className="text-muted-foreground">(355ml)</span></span><span className="font-callout text-sm text-gold">$8.50</span></div>
                   <div className="flex justify-between"><span className="font-body text-sm text-foreground">Bartlett Pear <span className="text-muted-foreground">(355ml)</span></span><span className="font-callout text-sm text-gold">$8.50</span></div>
                 </div>
@@ -329,37 +351,51 @@ const Menu = () => {
 
             {/* Spirits */}
             <FadeUp delay={0.2}>
-              <div className="bg-card border border-border p-6">
-                <h3 className="font-display text-xl font-bold text-foreground mb-4 text-center">Spirits</h3>
-                <div className="space-y-2 mb-3">
+              <div className="bg-card border border-border p-6 h-full flex flex-col">
+                <h3 className="font-display text-xl font-bold text-foreground mb-5 text-center">Spirits</h3>
+                <div className="space-y-2 mb-4">
                   <div className="flex justify-between"><span className="font-body text-sm text-foreground">1oz</span><span className="font-callout text-sm text-gold">$8.00</span></div>
                   <div className="flex justify-between"><span className="font-body text-sm text-foreground">2oz</span><span className="font-callout text-sm text-gold">$10.00</span></div>
                 </div>
-                <p className="font-body text-xs text-muted-foreground pt-3 border-t border-border">
-                  Absolut Vodka · Beefeater Gin · Bacardi White Rum · Jose Cuervo Tequila · 40 Creek Rye · Spiced Rum
-                </p>
+                <div className="flex-1 pt-4 border-t border-border">
+                  <p className="font-callout text-xs tracking-[0.2em] uppercase text-gold mb-3">Available</p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="font-body text-sm bg-border/50 text-foreground/80 px-3 py-1">Absolut Vodka</span>
+                    <span className="font-body text-sm bg-border/50 text-foreground/80 px-3 py-1">Beefeater Gin</span>
+                    <span className="font-body text-sm bg-border/50 text-foreground/80 px-3 py-1">Bacardi White Rum</span>
+                    <span className="font-body text-sm bg-border/50 text-foreground/80 px-3 py-1">Jose Cuervo Tequila</span>
+                    <span className="font-body text-sm bg-border/50 text-foreground/80 px-3 py-1">40 Creek Rye</span>
+                    <span className="font-body text-sm bg-border/50 text-foreground/80 px-3 py-1">Spiced Rum</span>
+                  </div>
+                </div>
               </div>
             </FadeUp>
 
             {/* Cocktails & Coffees */}
             <FadeUp delay={0.25}>
-              <div className="bg-card border border-border p-6">
-                <h3 className="font-display text-xl font-bold text-foreground mb-4 text-center">Cocktails & Coffees</h3>
-                <div className="flex justify-between mb-3">
+              <div className="bg-card border border-border p-6 h-full flex flex-col">
+                <h3 className="font-display text-xl font-bold text-foreground mb-5 text-center">Cocktails & Coffees</h3>
+                <div className="flex justify-between mb-4">
                   <span className="font-body text-sm text-foreground">2oz</span>
                   <span className="font-callout text-sm text-gold">$12.75</span>
                 </div>
-                <p className="font-body text-xs text-muted-foreground pt-3 border-t border-border">
-                  Irish Coffee · Mimosa · Baileys Coffee · Blueberry Tea
-                </p>
+                <div className="flex-1 pt-4 border-t border-border">
+                  <p className="font-callout text-xs tracking-[0.2em] uppercase text-gold mb-3">Available</p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="font-body text-sm bg-border/50 text-foreground/80 px-3 py-1">Irish Coffee</span>
+                    <span className="font-body text-sm bg-border/50 text-foreground/80 px-3 py-1">Mimosa</span>
+                    <span className="font-body text-sm bg-border/50 text-foreground/80 px-3 py-1">Baileys Coffee</span>
+                    <span className="font-body text-sm bg-border/50 text-foreground/80 px-3 py-1">Blueberry Tea</span>
+                  </div>
+                </div>
               </div>
             </FadeUp>
 
             {/* Non-Alcoholic */}
             <FadeUp delay={0.3}>
-              <div className="bg-card border border-border p-6">
-                <h3 className="font-display text-xl font-bold text-foreground mb-4 text-center">Non-Alcoholic</h3>
-                <div className="space-y-3">
+              <div className="bg-card border border-border p-6 h-full flex flex-col">
+                <h3 className="font-display text-xl font-bold text-foreground mb-5 text-center">Non-Alcoholic</h3>
+                <div className="space-y-3 flex-1">
                   <div className="flex justify-between"><span className="font-body text-sm text-foreground">Coffee / Tea / Hot Chocolate / Milk</span><span className="font-callout text-sm text-gold">$3.50</span></div>
                   <div className="flex justify-between"><span className="font-body text-sm text-foreground">Juice (Orange, Cranberry, Apple)</span><span className="font-callout text-sm text-gold">$3.50</span></div>
                   <div className="flex justify-between"><span className="font-body text-sm text-foreground">Pop & Iced Tea</span><span className="font-callout text-sm text-gold">$3.00</span></div>
