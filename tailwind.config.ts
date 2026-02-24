@@ -57,6 +57,18 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        cream: "hsl(var(--cream))",
+        burgundy: "hsl(var(--burgundy))",
+        "dark-brown": "hsl(var(--dark-brown))",
+        "warm-gray": "hsl(var(--warm-gray))",
+        "near-black": "hsl(var(--near-black))",
+        gold: "hsl(var(--gold))",
+        "gold-light": "hsl(var(--gold-light))",
+      },
+      fontFamily: {
+        display: ["Lora", "serif"],
+        body: ["Lato", "sans-serif"],
+        callout: ["Oswald", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
