@@ -1,6 +1,5 @@
-import { FadeUp, ScaleIn } from "./AnimatedSection";
-import foodRibs from "@/assets/food-ribs2.jpg";
-import { Calendar, Utensils } from "lucide-react";
+import { FadeUp } from "./AnimatedSection";
+import { Utensils } from "lucide-react";
 
 const specials = [
   { day: "Thursday", name: "Rib Night", price: "$26", desc: "Slow braised ribs with our in-house Rustlers' Sauce, seasonal veggies, mash potato & corn muffin." },
@@ -11,67 +10,70 @@ const specials = [
 
 const SpecialsSection = () => {
   return (
-    <section className="py-20 md:py-28 bg-secondary relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+    <section className="py-20 md:py-28 bg-background relative overflow-hidden">
+      {/* Decorative top border */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent" />
+
+      <div className="max-w-5xl mx-auto px-6 relative z-10">
         <FadeUp>
-          <div className="text-center mb-14">
-            <span className="font-callout text-sm tracking-[0.25em] uppercase text-gold mb-3 block">
+          <div className="text-center mb-16">
+            <span className="font-callout text-sm tracking-[0.3em] uppercase text-gold mb-3 block">
               Something Special Every Day
             </span>
             <h2 className="font-display text-4xl md:text-5xl text-foreground mb-4">
               Weekly Specials
             </h2>
-            <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-              From Rib Night to Sunday Roast Beef — there's always a reason to visit Rustlers' Table.
+            <p className="font-body text-lg text-muted-foreground max-w-xl mx-auto">
+              From Rib Night to Sunday Roast — there's always a reason to visit.
             </p>
           </div>
         </FadeUp>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Food photo */}
-          <ScaleIn>
-            <div className="relative group">
-              <div className="absolute -inset-3 bg-gold/20 -rotate-2 transition-transform duration-500 group-hover:rotate-0" />
-              <img
-                src={foodRibs}
-                alt="Rustlers' Table signature ribs"
-                className="relative w-full aspect-[4/3] object-cover shadow-xl"
-              />
-            </div>
-          </ScaleIn>
-
-          {/* Specials cards */}
-          <div className="space-y-5">
-            {specials.map((special, i) => (
-              <FadeUp key={special.day} delay={i * 0.1}>
-                <div className="bg-card/80 backdrop-blur-sm border border-border p-5 flex items-start gap-4 hover:shadow-lg hover:border-gold/40 transition-all duration-300">
-                  <div className="flex-shrink-0 w-12 h-12 bg-primary/20 flex items-center justify-center">
-                    <Calendar className="w-5 h-5 text-gold" />
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-baseline justify-between mb-1">
-                      <h3 className="font-display text-lg text-foreground">{special.day}</h3>
-                      <span className="font-callout text-sm tracking-wider text-gold font-semibold">{special.price}</span>
-                    </div>
-                    <p className="font-callout text-sm tracking-wider uppercase text-primary mb-1">{special.name}</p>
-                    <p className="font-body text-sm text-muted-foreground">{special.desc}</p>
-                  </div>
+        {/* Specials grid */}
+        <div className="grid sm:grid-cols-2 gap-6 mb-12">
+          {specials.map((special, i) => (
+            <FadeUp key={special.day} delay={i * 0.08}>
+              <div className="relative bg-card border border-border p-6 md:p-8 group hover:border-gold/30 transition-all duration-500 h-full">
+                {/* Day label */}
+                <div className="flex items-center justify-between mb-4">
+                  <span className="font-callout text-xs tracking-[0.3em] uppercase text-gold/80">
+                    {special.day}
+                  </span>
+                  <span className="font-callout text-sm tracking-wider text-gold font-semibold bg-gold/10 px-3 py-1">
+                    {special.price}
+                  </span>
                 </div>
-              </FadeUp>
-            ))}
 
-            <FadeUp delay={0.5}>
-              <a
-                href="https://www.rustlerstable.ca/specials"
-                className="inline-flex items-center gap-2 mt-4 font-callout text-sm tracking-widest uppercase bg-gold text-near-black px-8 py-3.5 hover:bg-gold-light transition-colors duration-300 font-semibold"
-              >
-                <Utensils className="w-4 h-4" />
-                View All Specials
-              </a>
+                {/* Divider */}
+                <div className="w-10 h-[1px] bg-gold/40 mb-4" />
+
+                {/* Name & description */}
+                <h3 className="font-display text-xl md:text-2xl text-foreground mb-3 leading-snug">
+                  {special.name}
+                </h3>
+                <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                  {special.desc}
+                </p>
+              </div>
             </FadeUp>
-          </div>
+          ))}
         </div>
+
+        <FadeUp delay={0.4}>
+          <div className="text-center">
+            <a
+              href="https://www.rustlerstable.ca/specials"
+              className="inline-flex items-center gap-2 font-callout text-sm tracking-widest uppercase bg-gold text-near-black px-8 py-3.5 hover:bg-gold-light transition-colors duration-300 font-semibold"
+            >
+              <Utensils className="w-4 h-4" />
+              View All Specials
+            </a>
+          </div>
+        </FadeUp>
       </div>
+
+      {/* Decorative bottom border */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-40 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent" />
     </section>
   );
 };
