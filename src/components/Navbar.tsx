@@ -36,7 +36,7 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center">
-          <img src={rustlersLogo} alt="Rustlers' Table" className="h-10 md:h-12 w-auto brightness-0 invert" />
+          <img src={rustlersLogo} alt="Rustlers' Table" className="h-14 md:h-16 w-auto brightness-0 invert" />
         </Link>
 
         {/* Desktop nav */}
