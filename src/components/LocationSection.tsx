@@ -3,7 +3,7 @@ import { MapPin, Phone, Clock } from "lucide-react";
 
 const LocationSection = () => {
   return (
-    <section className="py-24 md:py-32 bg-background">
+    <section className="py-24 md:py-32 bg-card">
       <div className="max-w-7xl mx-auto px-6">
         <FadeUp className="text-center mb-12">
           <p className="font-callout text-gold tracking-[0.3em] uppercase text-sm mb-3">
