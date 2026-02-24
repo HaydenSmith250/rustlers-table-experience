@@ -76,105 +76,6 @@ const Events = () => {
       </section>
 
       <div className="max-w-6xl mx-auto px-6">
-        {/* Daily Specials */}
-        <section className="py-20 md:py-28">
-          <FadeUp>
-            <div className="text-center mb-16">
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-2">Daily Specials</h2>
-              <p className="font-callout text-sm tracking-[0.2em] uppercase text-gold">Something Special Every Day</p>
-            </div>
-          </FadeUp>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Thursday */}
-            <FadeUp delay={0.05}>
-              <div className="bg-card border border-border p-8 h-full hover:border-gold/30 transition-colors">
-                <div className="flex items-center justify-between mb-4">
-                  <p className="font-callout text-xs tracking-widest uppercase text-gold">Thursday</p>
-                  <span className="font-callout text-lg text-gold font-semibold">$26.00</span>
-                </div>
-                <h3 className="font-display text-2xl font-bold text-foreground mb-3">Rib Night</h3>
-                <p className="font-body text-sm text-muted-foreground leading-relaxed mb-4">
-                  Slow braised ribs, finished with our in-house Rustlers Sauce, served with seasonal veggies, mash potato, and a corn muffin.
-                </p>
-                <p className="font-body text-xs text-gold/70 italic border-t border-border pt-4">
-                  Extra pound of ribs — $12.00
-                </p>
-              </div>
-            </FadeUp>
-
-            {/* Friday */}
-            <FadeUp delay={0.1}>
-              <div className="bg-card border border-border p-8 h-full hover:border-gold/30 transition-colors">
-                <div className="flex items-center justify-between mb-4">
-                  <p className="font-callout text-xs tracking-widest uppercase text-gold">Friday</p>
-                </div>
-                <h3 className="font-display text-2xl font-bold text-foreground mb-3">Seniors' Day & Fish & Chips</h3>
-                <div className="space-y-4">
-                  <div>
-                    <p className="font-display text-lg font-semibold text-foreground mb-1">Seniors' Day <span className="text-gold text-sm">(60+)</span></p>
-                    <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                      15% off ALL menu items for seniors aged 60 or over!
-                    </p>
-                  </div>
-                  <div className="border-t border-border pt-4">
-                    <p className="font-display text-lg font-semibold text-foreground mb-1">Fish & Chips</p>
-                    <p className="font-body text-sm text-muted-foreground">
-                      1pc Cod: <span className="text-gold">$17.00</span> · 2pc Cod: <span className="text-gold">$24.00</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </FadeUp>
-
-            {/* Saturday */}
-            <FadeUp delay={0.15}>
-              <div className="bg-card border border-border p-8 h-full hover:border-gold/30 transition-colors">
-                <div className="flex items-center justify-between mb-4">
-                  <p className="font-callout text-xs tracking-widest uppercase text-gold">Saturday</p>
-                  <span className="font-callout text-lg text-gold font-semibold">$2.00 OFF</span>
-                </div>
-                <h3 className="font-display text-2xl font-bold text-foreground mb-3">Burger Bash</h3>
-                <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                  Enjoy our famous Rustlers' Burger or try out the Hangman's Heat for $2.00 off! Comes with a side of your choice.
-                </p>
-              </div>
-            </FadeUp>
-
-            {/* Sunday */}
-            <FadeUp delay={0.2}>
-              <div className="bg-card border border-border p-8 h-full hover:border-gold/30 transition-colors">
-                <div className="flex items-center justify-between mb-4">
-                  <p className="font-callout text-xs tracking-widest uppercase text-gold">Sunday</p>
-                </div>
-                <h3 className="font-display text-2xl font-bold text-foreground mb-3">Brunch & Roast Beef Dinner</h3>
-                <div className="space-y-4">
-                  <div>
-                    <p className="font-display text-lg font-semibold text-foreground mb-1">Brunch Buffet <span className="text-muted-foreground text-sm">10 AM – 2 PM</span></p>
-                    <p className="font-body text-sm text-muted-foreground leading-relaxed mb-2">
-                      All you can eat Brunch Buffet! Includes all beverages.
-                    </p>
-                    <div className="font-body text-sm text-muted-foreground space-y-1">
-                      <p>Youth: <span className="text-gold">$16.00</span></p>
-                      <p>Adults: <span className="text-gold">$35.00</span></p>
-                      <p>Seniors: <span className="text-gold">$28.00</span></p>
-                    </div>
-                  </div>
-                  <div className="border-t border-border pt-4">
-                    <p className="font-display text-lg font-semibold text-foreground mb-1">Roast Beef Dinner <span className="text-muted-foreground text-sm">4 PM – 8 PM</span></p>
-                    <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                      Roast Beef Dinner with mashed potatoes, seasonal vegetables, yorkshire pudding, served with demi glaze or mushroom demi glaze.
-                    </p>
-                    <p className="font-callout text-gold font-semibold mt-2">$29.00</p>
-                  </div>
-                </div>
-              </div>
-            </FadeUp>
-          </div>
-        </section>
-
-        <div className="border-t border-border" />
-
         {/* Upcoming Events */}
         <section className="py-20 md:py-28">
           <FadeUp>
@@ -215,6 +116,119 @@ const Events = () => {
               </div>
             </div>
           </FadeUp>
+        </section>
+
+        <div className="border-t border-border" />
+
+        {/* Daily Specials */}
+        <section className="py-20 md:py-28">
+          <FadeUp>
+            <div className="text-center mb-16">
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-2">Daily Specials</h2>
+              <p className="font-callout text-sm tracking-[0.2em] uppercase text-gold">Something Special Every Day</p>
+            </div>
+          </FadeUp>
+
+          <div className="max-w-3xl mx-auto space-y-6">
+            {/* Wednesday */}
+            <FadeUp delay={0.05}>
+              <div className="bg-card border border-border p-8 hover:border-gold/30 transition-colors">
+                <div className="flex items-center justify-between mb-4">
+                  <p className="font-callout text-xs tracking-widest uppercase text-gold">Wednesday</p>
+                  <span className="font-callout text-lg text-gold font-semibold">2 Can Dine $54</span>
+                </div>
+                <h3 className="font-display text-2xl font-bold text-foreground mb-3">Steak Night</h3>
+                <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                  Buy one New York dinner at regular price and get the second New York dinner 50% off.
+                </p>
+              </div>
+            </FadeUp>
+
+            {/* Thursday */}
+            <FadeUp delay={0.1}>
+              <div className="bg-card border border-border p-8 hover:border-gold/30 transition-colors">
+                <div className="flex items-center justify-between mb-4">
+                  <p className="font-callout text-xs tracking-widest uppercase text-gold">Thursday</p>
+                  <span className="font-callout text-lg text-gold font-semibold">$26.00</span>
+                </div>
+                <h3 className="font-display text-2xl font-bold text-foreground mb-3">Rib Night</h3>
+                <p className="font-body text-sm text-muted-foreground leading-relaxed mb-4">
+                  Slow braised ribs, finished with our in-house Rustlers Sauce, served with seasonal veggies, mash potato, and a corn muffin.
+                </p>
+                <p className="font-body text-xs text-gold/70 italic border-t border-border pt-4">
+                  Extra pound of ribs — $12.00
+                </p>
+              </div>
+            </FadeUp>
+
+            {/* Friday */}
+            <FadeUp delay={0.15}>
+              <div className="bg-card border border-border p-8 hover:border-gold/30 transition-colors">
+                <div className="flex items-center justify-between mb-4">
+                  <p className="font-callout text-xs tracking-widest uppercase text-gold">Friday</p>
+                </div>
+                <h3 className="font-display text-2xl font-bold text-foreground mb-3">Seniors' Day & Fish & Chips</h3>
+                <div className="space-y-4">
+                  <div>
+                    <p className="font-display text-lg font-semibold text-foreground mb-1">Seniors' Day <span className="text-gold text-sm">(60+)</span></p>
+                    <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                      15% off ALL menu items for seniors aged 60 or over!
+                    </p>
+                  </div>
+                  <div className="border-t border-border pt-4">
+                    <p className="font-display text-lg font-semibold text-foreground mb-1">Fish & Chips</p>
+                    <p className="font-body text-sm text-muted-foreground">
+                      1pc Cod: <span className="text-gold">$17.00</span> · 2pc Cod: <span className="text-gold">$24.00</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </FadeUp>
+
+            {/* Saturday */}
+            <FadeUp delay={0.2}>
+              <div className="bg-card border border-border p-8 hover:border-gold/30 transition-colors">
+                <div className="flex items-center justify-between mb-4">
+                  <p className="font-callout text-xs tracking-widest uppercase text-gold">Saturday</p>
+                  <span className="font-callout text-lg text-gold font-semibold">$2.00 OFF</span>
+                </div>
+                <h3 className="font-display text-2xl font-bold text-foreground mb-3">Burger Bash</h3>
+                <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                  Enjoy our famous Rustlers' Burger or try out the Hangman's Heat for $2.00 off! Comes with a side of your choice.
+                </p>
+              </div>
+            </FadeUp>
+
+            {/* Sunday */}
+            <FadeUp delay={0.25}>
+              <div className="bg-card border border-border p-8 hover:border-gold/30 transition-colors">
+                <div className="flex items-center justify-between mb-4">
+                  <p className="font-callout text-xs tracking-widest uppercase text-gold">Sunday</p>
+                </div>
+                <h3 className="font-display text-2xl font-bold text-foreground mb-3">Brunch & Roast Beef Dinner</h3>
+                <div className="space-y-4">
+                  <div>
+                    <p className="font-display text-lg font-semibold text-foreground mb-1">Brunch Buffet <span className="text-muted-foreground text-sm">10 AM – 2 PM</span></p>
+                    <p className="font-body text-sm text-muted-foreground leading-relaxed mb-2">
+                      All you can eat Brunch Buffet! Includes all beverages.
+                    </p>
+                    <div className="font-body text-sm text-muted-foreground space-y-1">
+                      <p>Youth: <span className="text-gold">$16.00</span></p>
+                      <p>Adults: <span className="text-gold">$35.00</span></p>
+                      <p>Seniors: <span className="text-gold">$28.00</span></p>
+                    </div>
+                  </div>
+                  <div className="border-t border-border pt-4">
+                    <p className="font-display text-lg font-semibold text-foreground mb-1">Roast Beef Dinner <span className="text-muted-foreground text-sm">4 PM – 8 PM</span></p>
+                    <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                      Roast Beef Dinner with mashed potatoes, seasonal vegetables, yorkshire pudding, served with demi glaze or mushroom demi glaze.
+                    </p>
+                    <p className="font-callout text-gold font-semibold mt-2">$29.00</p>
+                  </div>
+                </div>
+              </div>
+            </FadeUp>
+          </div>
         </section>
 
         <div className="border-t border-border" />
