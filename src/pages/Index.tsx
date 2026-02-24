@@ -4,8 +4,7 @@ import FoodShowcase from "@/components/FoodShowcase";
 import SpecialsSection from "@/components/SpecialsSection";
 import QualitySection from "@/components/QualitySection";
 import RanchSection from "@/components/RanchSection";
-import SocialProof from "@/components/SocialProof";
-import BrunchSection from "@/components/BrunchSection";
+import ReviewCTA from "@/components/ReviewCTA";
 import LocationSection from "@/components/LocationSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
@@ -19,8 +18,7 @@ const Index = () => {
       <SpecialsSection />
       <QualitySection />
       <RanchSection />
-      <SocialProof />
-      <BrunchSection />
+      <ReviewCTA />
       <LocationSection />
       <CTASection />
       <Footer />
