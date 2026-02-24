@@ -19,10 +19,9 @@ const Index = () => {
       <FoodShowcase />
       <SpecialsSection />
       <QualitySection />
-      <RanchSection />
+      <CTASection />
       <ReviewCTA />
       <LocationSection />
-      <CTASection />
       <Footer />
     </div>
   );
