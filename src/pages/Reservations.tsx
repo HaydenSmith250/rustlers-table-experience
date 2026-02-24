@@ -24,13 +24,34 @@ const Reservations = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-near-black">
-        <div className="absolute inset-0 bg-gradient-to-b from-near-black to-background" />
+      <section className="relative pt-32 pb-24 md:pt-44 md:pb-32 bg-near-black overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-near-black via-near-black/90 to-background" />
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, hsl(var(--gold)) 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        <motion.div 
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border border-gold/10"
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+        />
+        <motion.div 
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full border border-gold/5"
+          initial={{ scale: 0.6, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.4, ease: "easeOut", delay: 0.2 }}
+        />
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-            <p className="font-callout text-gold tracking-[0.3em] uppercase text-sm mb-3">Reserve Your Spot</p>
-            <h1 className="font-display text-5xl md:text-7xl font-bold text-primary-foreground mb-4">Book a Table</h1>
-            <p className="font-body text-primary-foreground/70 text-lg max-w-xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+            <motion.div 
+              className="inline-flex items-center gap-2 border border-gold/30 bg-gold/5 px-5 py-2 mb-6"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+            >
+              <Utensils className="w-3.5 h-3.5 text-gold" />
+              <p className="font-callout text-gold tracking-[0.3em] uppercase text-xs">Reserve Your Spot</p>
+            </motion.div>
+            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground mb-5">Book a Table</h1>
+            <p className="font-body text-primary-foreground/60 text-lg md:text-xl max-w-xl mx-auto leading-relaxed">
               Whether it's a casual dinner, Sunday brunch, or a special celebration — we'd love to have you.
             </p>
           </motion.div>
@@ -41,20 +62,27 @@ const Reservations = () => {
       <section className="py-20 md:py-28">
         <div className="max-w-3xl mx-auto px-6">
           <FadeUp>
-            <div className="bg-card border border-border p-10 md:p-14 text-center flex flex-col items-center justify-center hover:border-gold/30 transition-colors">
-              <div className="w-20 h-20 bg-primary/20 flex items-center justify-center mb-8">
+            <div className="relative bg-gradient-to-br from-card via-card to-gold/5 border-2 border-gold/20 p-10 md:p-14 text-center flex flex-col items-center justify-center group hover:border-gold/50 transition-all duration-500 shadow-[0_0_60px_-15px_hsl(var(--gold)/0.15)]">
+              <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-gold/40" />
+              <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-gold/40" />
+              <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-gold/40" />
+              <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-gold/40" />
+              <div className="w-20 h-20 bg-gold/10 border border-gold/20 rounded-full flex items-center justify-center mb-8 group-hover:bg-gold/20 transition-colors duration-500">
                 <Phone className="w-9 h-9 text-gold" />
               </div>
-              <h2 className="font-display text-2xl font-bold text-foreground mb-3">Reserve Your Table</h2>
-              <p className="font-body text-muted-foreground mb-8 leading-relaxed max-w-md">
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-3">Reserve Your Table</h2>
+              <div className="w-16 h-0.5 bg-gold/40 mx-auto mb-5" />
+              <p className="font-body text-muted-foreground mb-8 leading-relaxed max-w-md text-base">
                 Give us a call to book your table directly. We're happy to accommodate special requests, dietary needs, and celebrations.
               </p>
               <a
                 href="tel:+12505422868"
-                className="inline-block font-callout text-sm tracking-widest uppercase bg-gold text-near-black px-8 py-4 hover:bg-gold-light transition-all duration-300 font-semibold"
+                className="inline-flex items-center gap-3 font-callout text-base tracking-widest uppercase bg-gold text-near-black px-10 py-5 hover:bg-gold-light transition-all duration-300 font-semibold shadow-lg shadow-gold/20 hover:shadow-gold/40 hover:scale-[1.02]"
               >
+                <Phone className="w-5 h-5" />
                 (250) 542-2868
               </a>
+              <p className="font-body text-xs text-muted-foreground mt-5 tracking-wide">Walk-ins also welcome</p>
             </div>
           </FadeUp>
         </div>
