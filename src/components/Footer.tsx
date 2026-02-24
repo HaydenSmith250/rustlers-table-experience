@@ -3,6 +3,25 @@ import { Facebook, Instagram, Star } from "lucide-react";
 const Footer = () => {
   return (
     <footer className="bg-near-black border-t border-primary-foreground/10">
+      {/* Review Banner */}
+      <div className="bg-gold py-3.5 text-center">
+        <a
+          href="https://g.page/r/rustlerstable/review"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-3 group"
+        >
+          <div className="flex gap-0.5">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} className="w-3.5 h-3.5 text-near-black fill-near-black" />
+            ))}
+          </div>
+          <span className="font-callout text-xs tracking-[0.2em] uppercase text-near-black font-semibold group-hover:underline">
+            Enjoyed your visit? Leave us a review
+          </span>
+        </a>
+      </div>
+
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
