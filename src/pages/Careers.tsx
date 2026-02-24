@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FadeUp } from "@/components/AnimatedSection";
 import { Utensils, ChefHat, ConciergeBell, CheckCircle } from "lucide-react";
+import hiringSign from "@/assets/hiring-sign.jpg";
 
 const positions = [
   {
@@ -98,6 +99,22 @@ const Careers = () => {
         </div>
       </section>
 
+      {/* Hiring Photo */}
+      <section className="py-12 md:py-16">
+        <div className="max-w-3xl mx-auto px-6">
+          <FadeUp>
+            <div className="overflow-hidden border border-border">
+              <img
+                src={hiringSign}
+                alt="Now Hiring sign in the window of Rustlers' Table"
+                className="w-full h-auto object-cover"
+                loading="lazy"
+              />
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
       {/* Open Positions */}
       <section className="py-20 md:py-28">
         <div className="max-w-5xl mx-auto px-6">
@@ -148,12 +165,11 @@ const Careers = () => {
               <p className="font-callout text-sm tracking-[0.2em] uppercase text-gold">More Than Just a Job</p>
             </div>
           </FadeUp>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
               { title: "Beautiful Setting", desc: "Work at the historic O'Keefe Ranch surrounded by stunning Okanagan scenery." },
               { title: "Team Culture", desc: "Join a supportive, tight-knit team that feels like family." },
               { title: "Growth", desc: "Learn from experienced chefs and hospitality professionals." },
-              { title: "Staff Perks", desc: "Enjoy staff meals, flexible scheduling, and a positive work environment." },
             ].map((perk, i) => (
               <FadeUp key={perk.title} delay={i * 0.08}>
                 <div className="text-center p-6">
