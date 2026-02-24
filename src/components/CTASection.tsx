@@ -2,7 +2,7 @@ import { FadeUp } from "./AnimatedSection";
 
 const CTASection = () => {
   return (
-    <section className="py-24 md:py-32 bg-primary">
+    <section className="py-24 md:py-32 bg-secondary">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <FadeUp>
           <p className="font-callout text-gold tracking-[0.3em] uppercase text-sm mb-3">
