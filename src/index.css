@@ -15,7 +15,7 @@
     --popover: 20 14% 14%;
     --popover-foreground: 36 33% 92%;
 
-    --primary: 0 35% 25%;
+    --primary: 355 45% 35%;
     --primary-foreground: 36 33% 96%;
 
     --secondary: 20 18% 18%;
@@ -32,7 +32,7 @@
 
     --border: 20 12% 22%;
     --input: 20 12% 22%;
-    --ring: 0 33% 36%;
+    --ring: 355 45% 35%;
 
     --radius: 0.25rem;
 
@@ -47,7 +47,7 @@
 
     /* Custom brand tokens */
     --cream: 36 33% 96%;
-    --burgundy: 0 33% 36%;
+    --burgundy: 355 45% 35%;
     --dark-brown: 20 18% 25%;
     --warm-gray: 26 8% 44%;
     --near-black: 30 14% 3%;
