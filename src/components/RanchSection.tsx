@@ -1,5 +1,5 @@
 import { FadeUp } from "./AnimatedSection";
-import ranchImg from "@/assets/ranch-hero.jpg";
+import ranchImg from "@/assets/ranch-okeefe.jpg";
 
 const RanchSection = () => {
   return (
