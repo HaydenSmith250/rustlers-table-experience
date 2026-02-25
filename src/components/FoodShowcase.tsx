@@ -13,44 +13,44 @@ const dishes = [
 
 const FoodShowcase = () => {
   return (
-    <section className="py-24 md:py-32 bg-near-black">
-      <div className="max-w-7xl mx-auto px-6">
-        <FadeUp className="text-center mb-16">
-          <p className="font-callout text-gold tracking-[0.3em] uppercase text-sm mb-3">
+    <section className="py-16 md:py-32 bg-near-black">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
+        <FadeUp className="text-center mb-10 md:mb-16">
+          <p className="font-callout text-gold tracking-[0.3em] uppercase text-xs md:text-sm mb-2 md:mb-3">
             From Our Kitchen
           </p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-primary-foreground mb-3 md:mb-4">
             Bold Flavours, Crafted with Care
           </h2>
-          <p className="font-body text-primary-foreground/60 max-w-2xl mx-auto text-lg">
+          <p className="font-body text-primary-foreground/60 max-w-2xl mx-auto text-sm md:text-lg">
             Every dish tells a story — from ranch-raised ingredients to recipes perfected over time.
           </p>
         </FadeUp>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
           {dishes.map((dish, i) => (
-            <FadeUp key={dish.name} delay={i * 0.15} className="group relative overflow-hidden aspect-[4/3]">
+            <FadeUp key={dish.name} delay={i * 0.1} className="group relative overflow-hidden aspect-[16/10] md:aspect-[4/3]">
               <img
                 src={dish.img}
                 alt={dish.name}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-near-black/80 via-near-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                <h3 className="font-display text-xl md:text-2xl font-semibold text-primary-foreground mb-1">
+              <div className="absolute inset-0 bg-gradient-to-t from-near-black/80 via-near-black/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8">
+                <h3 className="font-display text-lg md:text-2xl font-semibold text-primary-foreground mb-0.5 md:mb-1">
                   {dish.name}
                 </h3>
-                <p className="font-body text-primary-foreground/70 text-sm">{dish.desc}</p>
+                <p className="font-body text-primary-foreground/70 text-xs md:text-sm">{dish.desc}</p>
               </div>
             </FadeUp>
           ))}
         </div>
 
-        <FadeUp delay={0.4} className="text-center mt-12">
+        <FadeUp delay={0.3} className="text-center mt-8 md:mt-12">
           <a
             href="https://www.rustlerstable.ca/menu"
-            className="inline-block font-callout text-sm tracking-widest uppercase border border-gold/50 text-gold px-8 py-4 hover:bg-gold/10 transition-all duration-300"
+            className="inline-block font-callout text-xs md:text-sm tracking-widest uppercase border border-gold/50 text-gold px-6 md:px-8 py-3.5 md:py-4 hover:bg-gold/10 transition-all duration-300 active:scale-[0.98]"
           >
             Explore Full Menu
           </a>

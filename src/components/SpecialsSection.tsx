@@ -10,48 +10,43 @@ const specials = [
 
 const SpecialsSection = () => {
   return (
-    <section className="py-20 md:py-28 bg-background relative overflow-hidden">
+    <section className="py-14 md:py-28 bg-background relative overflow-hidden">
       {/* Decorative top border */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent" />
 
-      <div className="max-w-5xl mx-auto px-6 relative z-10">
+      <div className="max-w-5xl mx-auto px-4 md:px-6 relative z-10">
         <FadeUp>
-          <div className="text-center mb-16">
-            <span className="font-callout text-sm tracking-[0.3em] uppercase text-gold mb-3 block">
+          <div className="text-center mb-10 md:mb-16">
+            <span className="font-callout text-xs md:text-sm tracking-[0.3em] uppercase text-gold mb-2 md:mb-3 block">
               Something Special Every Day
             </span>
-            <h2 className="font-display text-4xl md:text-5xl text-foreground mb-4">
+            <h2 className="font-display text-3xl md:text-5xl text-foreground mb-3 md:mb-4">
               Weekly Specials
             </h2>
-            <p className="font-body text-lg text-muted-foreground max-w-xl mx-auto">
+            <p className="font-body text-sm md:text-lg text-muted-foreground max-w-xl mx-auto">
               From Rib Night to Sunday Roast — there's always a reason to visit.
             </p>
           </div>
         </FadeUp>
 
-        {/* Specials grid */}
-        <div className="grid sm:grid-cols-2 gap-6 mb-12">
+        {/* Specials - stack on mobile */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-6 mb-8 md:mb-12">
           {specials.map((special, i) => (
-            <FadeUp key={special.day} delay={i * 0.08}>
-              <div className="relative bg-card border border-border p-6 md:p-8 group hover:border-gold/30 transition-all duration-500 h-full">
-                {/* Day label */}
-                <div className="flex items-center justify-between mb-4">
-                  <span className="font-callout text-xs tracking-[0.3em] uppercase text-gold/80">
+            <FadeUp key={special.day} delay={i * 0.06}>
+              <div className="relative bg-card border border-border p-5 md:p-8 group hover:border-gold/30 transition-all duration-500 h-full">
+                <div className="flex items-center justify-between mb-3 md:mb-4">
+                  <span className="font-callout text-[10px] md:text-xs tracking-[0.3em] uppercase text-gold/80">
                     {special.day}
                   </span>
-                  <span className="font-callout text-sm tracking-wider text-gold font-semibold bg-gold/10 px-3 py-1">
+                  <span className="font-callout text-xs md:text-sm tracking-wider text-gold font-semibold bg-gold/10 px-2.5 md:px-3 py-0.5 md:py-1">
                     {special.price}
                   </span>
                 </div>
-
-                {/* Divider */}
-                <div className="w-10 h-[1px] bg-gold/40 mb-4" />
-
-                {/* Name & description */}
-                <h3 className="font-display text-xl md:text-2xl text-foreground mb-3 leading-snug">
+                <div className="w-8 md:w-10 h-[1px] bg-gold/40 mb-3 md:mb-4" />
+                <h3 className="font-display text-lg md:text-2xl text-foreground mb-2 md:mb-3 leading-snug">
                   {special.name}
                 </h3>
-                <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                <p className="font-body text-xs md:text-sm text-muted-foreground leading-relaxed">
                   {special.desc}
                 </p>
               </div>
@@ -59,20 +54,19 @@ const SpecialsSection = () => {
           ))}
         </div>
 
-        <FadeUp delay={0.4}>
+        <FadeUp delay={0.3}>
           <div className="text-center">
             <a
               href="https://www.rustlerstable.ca/specials"
-              className="inline-flex items-center gap-2 font-callout text-sm tracking-widest uppercase bg-gold text-near-black px-8 py-3.5 hover:bg-gold-light transition-colors duration-300 font-semibold"
+              className="inline-flex items-center gap-2 font-callout text-xs md:text-sm tracking-widest uppercase bg-gold text-near-black px-6 md:px-8 py-3 md:py-3.5 hover:bg-gold-light transition-colors duration-300 font-semibold active:scale-[0.98]"
             >
-              <Utensils className="w-4 h-4" />
+              <Utensils className="w-3.5 md:w-4 h-3.5 md:h-4" />
               View All Specials
             </a>
           </div>
         </FadeUp>
       </div>
 
-      {/* Decorative bottom border */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-40 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent" />
     </section>
   );

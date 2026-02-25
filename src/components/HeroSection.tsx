@@ -4,7 +4,7 @@ import heroImg from "@/assets/food-burger.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0">
         <img
@@ -12,39 +12,40 @@ const HeroSection = () => {
           alt="Rustlers' Table signature burger"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-near-black/80 via-near-black/50 to-near-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-near-black/80 via-near-black/50 to-near-black/30 md:block hidden" />
+        <div className="absolute inset-0 bg-gradient-to-b from-near-black/60 via-near-black/40 to-near-black/80 md:hidden" />
         <div className="absolute inset-0 bg-gradient-to-t from-near-black/70 via-transparent to-near-black/30" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 text-center md:text-left w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-6 text-center md:text-left w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-2xl"
+          className="max-w-2xl mx-auto md:mx-0"
         >
-          <p className="font-callout text-gold tracking-[0.3em] uppercase text-sm mb-4">
+          <p className="font-callout text-gold tracking-[0.3em] uppercase text-xs md:text-sm mb-3 md:mb-4">
             At the Historic O'Keefe Ranch
           </p>
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] text-primary-foreground mb-6">
+          <h1 className="font-display text-4xl md:text-7xl lg:text-8xl font-bold leading-[0.95] text-primary-foreground mb-4 md:mb-6">
             Eat Now,<br />
             <span className="text-gradient-gold">Shoot Later.</span>
           </h1>
-          <p className="font-body text-lg md:text-xl text-primary-foreground/80 max-w-lg mb-8 leading-relaxed">
+          <p className="font-body text-base md:text-xl text-primary-foreground/80 max-w-lg mx-auto md:mx-0 mb-6 md:mb-8 leading-relaxed">
             Bold flavours, smoky favourites, and hearty meals with a rustic edge — 
             set on one of BC's most beautiful heritage sites.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
             <Link
               to="/reservations"
-              className="inline-block font-callout text-sm tracking-widest uppercase bg-primary text-primary-foreground px-8 py-4 hover:bg-burgundy/80 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
+              className="inline-block font-callout text-sm tracking-widest uppercase bg-primary text-primary-foreground px-6 md:px-8 py-3.5 md:py-4 hover:bg-burgundy/80 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 text-center active:scale-[0.98]"
             >
               Reserve Your Table
             </Link>
             <Link
               to="/menu"
-              className="inline-block font-callout text-sm tracking-widest uppercase border border-gold/50 text-gold px-8 py-4 hover:bg-gold/10 transition-all duration-300"
+              className="inline-block font-callout text-sm tracking-widest uppercase border border-gold/50 text-gold px-6 md:px-8 py-3.5 md:py-4 hover:bg-gold/10 transition-all duration-300 text-center active:scale-[0.98]"
             >
               View Our Menu
             </Link>
@@ -52,12 +53,12 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator - hidden on mobile */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}
