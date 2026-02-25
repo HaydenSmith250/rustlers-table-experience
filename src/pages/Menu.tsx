@@ -38,26 +38,26 @@ const MenuSection = ({ id, title, subtitle, items, children }: {
   items: MenuItem[];
   children?: React.ReactNode;
 }) => (
-  <section id={id} className="py-16 md:py-20 scroll-mt-24">
+  <section id={id} className="py-10 md:py-20 scroll-mt-32 md:scroll-mt-36">
     <FadeUp>
-      <div className="text-center mb-12">
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-2">{title}</h2>
-        {subtitle && <p className="font-callout text-sm tracking-[0.2em] uppercase text-gold">{subtitle}</p>}
+      <div className="text-center mb-8 md:mb-12">
+        <h2 className="font-display text-2xl md:text-4xl font-bold text-foreground mb-1.5 md:mb-2">{title}</h2>
+        {subtitle && <p className="font-callout text-[10px] md:text-sm tracking-[0.2em] uppercase text-gold">{subtitle}</p>}
       </div>
     </FadeUp>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-5xl mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0 max-w-5xl mx-auto">
       {items.map((item, i) => (
-        <FadeUp key={item.name} delay={i * 0.04}>
-          <div className="flex justify-between items-start gap-4 py-4 border-b border-border group hover:border-gold/30 transition-colors">
-            <div className="flex-1">
-              <h3 className="font-display text-lg text-foreground group-hover:text-gold transition-colors flex items-center gap-2">
+        <FadeUp key={item.name} delay={i * 0.03}>
+          <div className="flex justify-between items-start gap-3 md:gap-4 py-3.5 md:py-4 border-b border-border group hover:border-gold/30 transition-colors">
+            <div className="flex-1 min-w-0">
+              <h3 className="font-display text-base md:text-lg text-foreground group-hover:text-gold transition-colors flex items-center gap-1.5 md:gap-2 flex-wrap">
                 {item.name}
-                {item.cab && <img src={cabLogo} alt="Certified Angus Beef" className="h-5 w-auto inline-block" />}
+                {item.cab && <img src={cabLogo} alt="Certified Angus Beef" className="h-4 md:h-5 w-auto inline-block" />}
               </h3>
-              <p className="font-body text-sm text-muted-foreground mt-1 leading-relaxed">{item.desc}</p>
-              {item.note && <p className="font-body text-xs text-gold/70 mt-1 italic">{item.note}</p>}
+              <p className="font-body text-xs md:text-sm text-muted-foreground mt-0.5 md:mt-1 leading-relaxed">{item.desc}</p>
+              {item.note && <p className="font-body text-[10px] md:text-xs text-gold/70 mt-0.5 md:mt-1 italic">{item.note}</p>}
             </div>
-            <span className="font-callout text-sm tracking-wider text-gold font-semibold whitespace-nowrap pt-1">{item.price}</span>
+            <span className="font-callout text-xs md:text-sm tracking-wider text-gold font-semibold whitespace-nowrap pt-0.5 md:pt-1">{item.price}</span>
           </div>
         </FadeUp>
       ))}
@@ -153,16 +153,16 @@ const Menu = () => {
       <Navbar />
 
       {/* Hero banner */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+      <section className="relative pt-24 pb-14 md:pt-40 md:pb-28 overflow-hidden">
         <div className="absolute inset-0">
           <img src={foodSteak} alt="Rustlers' Table menu" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-near-black/80 via-near-black/70 to-background" />
         </div>
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 md:px-6 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-            <p className="font-callout text-gold tracking-[0.3em] uppercase text-sm mb-3">Rustlers' Table</p>
-            <h1 className="font-display text-5xl md:text-7xl font-bold text-primary-foreground mb-4">Our Menu</h1>
-            <p className="font-body text-primary-foreground/70 text-lg max-w-xl mx-auto">
+            <p className="font-callout text-gold tracking-[0.3em] uppercase text-xs md:text-sm mb-2 md:mb-3">Rustlers' Table</p>
+            <h1 className="font-display text-4xl md:text-7xl font-bold text-primary-foreground mb-3 md:mb-4">Our Menu</h1>
+            <p className="font-body text-primary-foreground/70 text-sm md:text-lg max-w-xl mx-auto">
               Bold flavours, quality ingredients, and dishes crafted with care — from starters to steaks.
             </p>
           </motion.div>
@@ -170,14 +170,14 @@ const Menu = () => {
       </section>
 
       {/* Sticky section nav */}
-      <nav className="sticky top-16 z-40 bg-card/95 backdrop-blur-md border-b border-border">
-        <div className="max-w-7xl mx-auto px-6 overflow-x-auto scrollbar-hide">
-          <div className="flex gap-1 py-3 min-w-max justify-center">
+      <nav className="sticky top-[68px] md:top-[88px] z-40 bg-card/95 backdrop-blur-md border-b border-border">
+        <div className="max-w-7xl mx-auto px-2 md:px-6 overflow-x-auto scrollbar-hide">
+          <div className="flex gap-0 md:gap-1 py-2 md:py-3 min-w-max md:justify-center">
             {sections.map(({ id, label }) => (
               <button
                 key={id}
                 onClick={() => scrollTo(id)}
-                className={`font-callout text-xs tracking-widest uppercase px-4 py-2 transition-all duration-300 whitespace-nowrap ${
+                className={`font-callout text-[10px] md:text-xs tracking-widest uppercase px-2.5 md:px-4 py-2 transition-all duration-300 whitespace-nowrap ${
                   activeSection === id
                     ? "text-gold border-b-2 border-gold"
                     : "text-muted-foreground hover:text-foreground"
@@ -191,7 +191,7 @@ const Menu = () => {
       </nav>
 
       {/* Menu content */}
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
         <MenuSection id="starters" title="Starters" subtitle="Available All Day" items={starters}>
           <FadeUp delay={0.3} className="mt-12">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
