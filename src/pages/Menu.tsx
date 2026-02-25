@@ -11,6 +11,7 @@ import foodRibs from "@/assets/food-ribs.jpg";
 import foodShortrib from "@/assets/food-shortrib.jpg";
 import foodBurger from "@/assets/food-burger.jpg";
 import foodRibs2 from "@/assets/food-ribs2.jpg";
+import cabLogo from "@/assets/cab-logo.png";
 
 const sections = [
   { id: "starters", label: "Starters" },
@@ -27,6 +28,7 @@ interface MenuItem {
   price: string;
   desc: string;
   note?: string;
+  cab?: boolean;
 }
 
 const MenuSection = ({ id, title, subtitle, items, children }: {
@@ -48,7 +50,10 @@ const MenuSection = ({ id, title, subtitle, items, children }: {
         <FadeUp key={item.name} delay={i * 0.04}>
           <div className="flex justify-between items-start gap-4 py-4 border-b border-border group hover:border-gold/30 transition-colors">
             <div className="flex-1">
-              <h3 className="font-display text-lg text-foreground group-hover:text-gold transition-colors">{item.name}</h3>
+              <h3 className="font-display text-lg text-foreground group-hover:text-gold transition-colors flex items-center gap-2">
+                {item.name}
+                {item.cab && <img src={cabLogo} alt="Certified Angus Beef" className="h-5 w-auto inline-block" />}
+              </h3>
               <p className="font-body text-sm text-muted-foreground mt-1 leading-relaxed">{item.desc}</p>
               {item.note && <p className="font-body text-xs text-gold/70 mt-1 italic">{item.note}</p>}
             </div>
@@ -79,8 +84,8 @@ const salads: MenuItem[] = [
 ];
 
 const lunchHandhelds: MenuItem[] = [
-  { name: "Steak Sandwich", price: "$33", desc: "8oz striploin served on a garlic focaccia, sautéed mushrooms, crispy shallots, served with choice of gravy or demi glaze." },
-  { name: "Roast Beef Dip", price: "$25", desc: "Slow roasted prime rib cooked in jus, with caramelized onions & smoked gouda. Choice of jus or demi glaze." },
+  { name: "Steak Sandwich", price: "$33", desc: "8oz striploin served on a garlic focaccia, sautéed mushrooms, crispy shallots, served with choice of gravy or demi glaze.", cab: true },
+  { name: "Roast Beef Dip", price: "$25", desc: "Slow roasted prime rib cooked in jus, with caramelized onions & smoked gouda. Choice of jus or demi glaze.", cab: true },
   { name: "BBQ Pulled Pork", price: "$19", desc: "Slow braised pork shoulder with spicy chipotle aioli & jalapeño coleslaw, with swiss cheese." },
   { name: "Chicken Caesar Wrap", price: "$22", desc: "Romaine, crispy chicken, asiago cheese, bacon, fried capers, with a creamy caesar dressing." },
   { name: "Veggie Wrap", price: "$19", desc: "Seasonal vegetables, goat cheese & roasted walnuts with roasted shallot vinaigrette." },
@@ -88,10 +93,10 @@ const lunchHandhelds: MenuItem[] = [
 ];
 
 const allDayHandhelds: MenuItem[] = [
-  { name: "Rustlers Burger", price: "$27", desc: "6oz thick pure chuck blackened, with smoked cheddar cheese, smoked paprika and BBQ aioli, lettuce, tomato, red onion, dill pickle, crispy shallots & bacon." },
-  { name: "Hangman's Heat", price: "$29", desc: "6oz burger dipped in-house buffalo sauce, smoked cheddar cheese, topped with sriracha roasted red pepper aioli, banana pepper, red onion, bacon, lettuce, tomato & sliced dill pickle." },
+  { name: "Rustlers Burger", price: "$27", desc: "6oz thick pure chuck blackened, with smoked cheddar cheese, smoked paprika and BBQ aioli, lettuce, tomato, red onion, dill pickle, crispy shallots & bacon.", cab: true },
+  { name: "Hangman's Heat", price: "$29", desc: "6oz burger dipped in-house buffalo sauce, smoked cheddar cheese, topped with sriracha roasted red pepper aioli, banana pepper, red onion, bacon, lettuce, tomato & sliced dill pickle.", cab: true },
   { name: "RT's Chicken Club", price: "$25", desc: "Crispy chicken breast with bacon, lettuce, tomato, and house aioli on a toasted bun." },
-  { name: "Saddle Burger", price: "$25", desc: "Classic 6oz chuck burger with all the fixings and your choice of cheese." },
+  { name: "Saddle Burger", price: "$25", desc: "Classic 6oz chuck burger with all the fixings and your choice of cheese.", cab: true },
 ];
 
 const pastas: MenuItem[] = [
@@ -102,9 +107,9 @@ const pastas: MenuItem[] = [
 ];
 
 const entrees: MenuItem[] = [
-  { name: "10oz Ribeye", price: "$44", desc: "Certified Angus Beef® ribeye with daily mashed potatoes & seasonal vegetables. Choice of compound butter, peppercorn, or béarnaise sauce.", note: "Add Garlic Shrimp $12 · Cajun Shrimp $12 · Mushrooms $5" },
-  { name: "New York Striploin", price: "$38", desc: "8oz Certified Angus Beef® striploin, daily mashed potatoes & seasonal vegetables. Choice of compound butter, peppercorn, or béarnaise sauce." },
-  { name: "Beef Short Ribs", price: "$38", desc: "2 large slow braised short ribs with a wild mushroom demi glaze, daily mashed potatoes & seasonal vegetables." },
+  { name: "10oz Ribeye", price: "$44", desc: "Certified Angus Beef® ribeye with daily mashed potatoes & seasonal vegetables. Choice of compound butter, peppercorn, or béarnaise sauce.", note: "Add Garlic Shrimp $12 · Cajun Shrimp $12 · Mushrooms $5", cab: true },
+  { name: "New York Striploin", price: "$38", desc: "8oz Certified Angus Beef® striploin, daily mashed potatoes & seasonal vegetables. Choice of compound butter, peppercorn, or béarnaise sauce.", cab: true },
+  { name: "Beef Short Ribs", price: "$38", desc: "2 large slow braised short ribs with a wild mushroom demi glaze, daily mashed potatoes & seasonal vegetables.", cab: true },
   { name: "Atlantic Salmon", price: "$32", desc: "6oz maple bourbon glazed salmon, sundried tomatoes and roasted garlic quinoa & seasonal vegetables." },
   { name: "Chicken Supreme", price: "$27", desc: "8oz seared chicken breast with a cranberry demi glaze, daily mashed potatoes & seasonal vegetables." },
   { name: "Buttermilk Chicken", price: "$25", desc: "Crispy buttermilk fried chicken with daily mashed potatoes & seasonal vegetables." },
