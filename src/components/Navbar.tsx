@@ -93,9 +93,13 @@ const Navbar = () => {
           scrolled || mobileOpen ? "bg-near-black/95 backdrop-blur-md shadow-lg" : "bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 md:px-6 py-1.5 md:py-2 flex items-center justify-between">
+        <div className={`max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between transition-all duration-500 ${
+          scrolled ? "py-1 md:py-1" : "py-1.5 md:py-2"
+        }`}>
           <Link to="/" className="flex items-center">
-            <img src={rustlersLogo} alt="Rustlers' Table" className="h-16 md:h-36 w-auto brightness-0 invert" />
+            <img src={rustlersLogo} alt="Rustlers' Table" className={`w-auto brightness-0 invert transition-all duration-500 ${
+              scrolled ? "h-10 md:h-16" : "h-16 md:h-36"
+            }`} />
           </Link>
 
           {/* Desktop nav */}
