@@ -11,6 +11,8 @@ import foodRibs from "@/assets/food-ribs.jpg";
 import foodShortrib from "@/assets/food-shortrib.jpg";
 import foodBurger from "@/assets/food-burger.jpg";
 import foodRibs2 from "@/assets/food-ribs2.jpg";
+import foodDesserts from "@/assets/food-desserts.jpg";
+import foodDrinks from "@/assets/food-drinks.jpg";
 import cabLogo from "@/assets/cab-logo.png";
 
 const sections = [
@@ -170,7 +172,7 @@ const Menu = () => {
       </section>
 
       {/* Sticky section nav */}
-      <nav className="sticky top-[68px] md:top-[88px] z-40 bg-card/95 backdrop-blur-md border-b border-border">
+      <nav className="sticky top-[52px] md:top-[68px] z-40 bg-card/95 backdrop-blur-md border-b border-border -mt-px">
         <div className="max-w-7xl mx-auto px-2 md:px-6 overflow-x-auto scrollbar-hide">
           <div className="flex gap-0 md:gap-1 py-2 md:py-3 min-w-max md:justify-center">
             {sections.map(({ id, label }) => (
@@ -274,7 +276,11 @@ const Menu = () => {
 
         <div className="border-t border-border" />
 
-        <MenuSection id="desserts" title="Desserts" subtitle="Sweet Endings" items={desserts} />
+        <MenuSection id="desserts" title="Desserts" subtitle="Sweet Endings" items={desserts}>
+          <FadeUp delay={0.3} className="mt-10">
+            <img src={foodDesserts} alt="Baileys cheesecake and carrot cake" className="w-full max-w-2xl mx-auto aspect-[16/9] object-cover" />
+          </FadeUp>
+        </MenuSection>
 
         <div className="border-t border-border" />
 
@@ -285,6 +291,10 @@ const Menu = () => {
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-2">Drinks</h2>
               <p className="font-callout text-sm tracking-[0.2em] uppercase text-gold">Beer · Wine · Spirits · Cocktails</p>
             </div>
+          </FadeUp>
+
+          <FadeUp delay={0.05} className="mb-10">
+            <img src={foodDrinks} alt="Craft cocktails and cold beer" className="w-full max-w-2xl mx-auto aspect-[16/9] object-cover" />
           </FadeUp>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
