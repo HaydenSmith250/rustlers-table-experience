@@ -8,6 +8,7 @@ import Menu from "./pages/Menu";
 import Reservations from "./pages/Reservations";
 import Hours from "./pages/Hours";
 import Events from "./pages/Events";
+import EventDetail from "./pages/EventDetail";
 import Careers from "./pages/Careers";
 import NotFound from "./pages/NotFound";
 
