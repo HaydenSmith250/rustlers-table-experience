@@ -53,6 +53,19 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
+      {/* Social proof badge */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+        className="absolute bottom-24 md:bottom-20 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-8"
+      >
+        <div className="flex items-center gap-1.5 bg-near-black/60 backdrop-blur-sm border border-border/30 px-3 py-1.5 rounded-full">
+          <span className="text-gold text-xs">⭐</span>
+          <span className="font-body text-[11px] text-primary-foreground/70 tracking-wide">4.8 · Google Reviews</span>
+        </div>
+      </motion.div>
+
       {/* Scroll indicator - hidden on mobile */}
       <motion.div
         initial={{ opacity: 0 }}

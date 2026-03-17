@@ -15,19 +15,19 @@ const LocationSection = () => {
         </FadeUp>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
-          {/* Map - shorter aspect ratio on mobile */}
+          {/* Google Maps embed */}
           <FadeUp delay={0.15}>
-            <div className="aspect-[4/3] md:aspect-[4/3] w-full rounded-sm overflow-hidden">
+            <div className="w-full rounded-xl overflow-hidden border-2 border-gold/40 shadow-lg shadow-near-black/30">
               <iframe
                 title="Rustlers' Table Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2533.8!2d-119.5!3d50.3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDE4JzAwLjAiTiAxMTnCsDMwJzAwLjAiVw!5e0!3m2!1sen!2sca!4v1700000000000"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2545.1304867716226!2d-119.28278449999999!3d50.3641213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x537e773cb6290bfb%3A0xcfc8803e256b5831!2sRustlers%20Table!5e0!3m2!1sen!2sca!4v1773789510839!5m2!1sen!2sca"
                 width="100%"
-                height="100%"
+                height="450"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-full"
+                className="w-full"
               />
             </div>
           </FadeUp>
