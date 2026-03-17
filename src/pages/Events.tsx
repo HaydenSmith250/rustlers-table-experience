@@ -90,35 +90,37 @@ const Events = () => {
           </FadeUp>
 
           <FadeUp delay={0.1}>
-            <div className="bg-card border border-border p-10 md:p-14 hover:border-gold/30 transition-colors max-w-4xl mx-auto">
-              <div className="flex flex-col md:flex-row gap-8 items-start">
-                <div className="w-20 h-20 bg-primary/20 flex items-center justify-center flex-shrink-0">
-                  <Music className="w-10 h-10 text-gold" />
-                </div>
-                <div className="flex-1">
-                  <span className="inline-block font-callout text-xs tracking-widest uppercase bg-primary/30 text-gold px-3 py-1 mb-4">
-                    Live Music
-                  </span>
-                  <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
-                    Country Dance Night with Marv Matchura
-                  </h3>
-                  <p className="font-body text-muted-foreground leading-relaxed mb-6">
-                    Put on your boots and hit the floor! Join us for a fun-filled evening of country dancing with live music by Marv Matchura. Whether you're a seasoned two-stepper or just looking for a great night out, this is the place to be. Full dinner service and bar available.
-                  </p>
-                  <div className="flex flex-wrap gap-6">
-                    <span className="font-body text-sm text-gold flex items-center gap-2">
-                      <Calendar className="w-4 h-4" /> Select Friday & Saturday Evenings
+            <Link to="/events/country-dance-night" className="block">
+              <div className="bg-card border border-border p-10 md:p-14 hover:border-gold/30 transition-colors max-w-4xl mx-auto cursor-pointer group">
+                <div className="flex flex-col md:flex-row gap-8 items-start">
+                  <div className="w-20 h-20 bg-primary/20 flex items-center justify-center flex-shrink-0">
+                    <Music className="w-10 h-10 text-gold" />
+                  </div>
+                  <div className="flex-1">
+                    <span className="inline-block font-callout text-xs tracking-widest uppercase bg-primary/30 text-gold px-3 py-1 mb-4">
+                      Live Music
                     </span>
-                    <span className="font-body text-sm text-muted-foreground flex items-center gap-2">
-                      <Clock className="w-4 h-4" /> 7:00 PM – 10:00 PM
-                    </span>
-                    <span className="font-body text-sm text-muted-foreground flex items-center gap-2">
-                      <MapPin className="w-4 h-4" /> Rustlers' Table at O'Keefe Ranch
-                    </span>
+                    <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4 group-hover:text-gold transition-colors">
+                      Country Dance Night with Marv Makura
+                    </h3>
+                    <p className="font-body text-muted-foreground leading-relaxed mb-6">
+                      Put on your boots and hit the floor! Join us for a fun-filled evening of country dancing with live music by Marv Makura.
+                    </p>
+                    <div className="flex flex-wrap gap-6">
+                      <span className="font-body text-sm text-gold flex items-center gap-2">
+                        <Calendar className="w-4 h-4" /> Wednesday Evenings
+                      </span>
+                      <span className="font-body text-sm text-muted-foreground flex items-center gap-2">
+                        <Clock className="w-4 h-4" /> Evening
+                      </span>
+                      <span className="font-body text-sm text-muted-foreground flex items-center gap-2">
+                        <MapPin className="w-4 h-4" /> Rustlers' Table at O'Keefe Ranch
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           </FadeUp>
         </section>
 

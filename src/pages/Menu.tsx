@@ -293,6 +293,10 @@ const Menu = () => {
             </div>
           </FadeUp>
 
+          <FadeUp delay={0.05} className="mb-10">
+            <img src={foodDrinks} alt="Craft cocktails and cold beer" className="w-full max-w-2xl mx-auto aspect-[16/9] object-cover" />
+          </FadeUp>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* Beer */}
             <FadeUp delay={0.05}>
