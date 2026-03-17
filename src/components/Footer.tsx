@@ -30,10 +30,8 @@ const Footer = () => {
             <h3 className="font-display text-xl md:text-2xl font-bold text-primary-foreground mb-2 md:mb-3">
               RUSTLERS' TABLE
             </h3>
-            <p className="font-body text-primary-foreground/50 text-xs md:text-sm leading-relaxed">
-              Wood-fired steakhouse at the historic O'Keefe Ranch.
-              <br />
-              Vernon, British Columbia.
+             <p className="font-body text-primary-foreground/50 text-xs md:text-sm leading-relaxed">
+               Vernon, British Columbia.
             </p>
           </div>
 
