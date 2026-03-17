@@ -1,6 +1,6 @@
 import { FadeUp, ScaleIn } from "./AnimatedSection";
 import { Star, Quote, ExternalLink } from "lucide-react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef } from "react";
 
 import foodCarrotcake from "@/assets/food-carrotcake.png";
@@ -38,13 +38,14 @@ const reviews = [
 
 const MarqueeRow = ({ images, direction, scrollProgress }: { images: string[]; direction: 1 | -1; scrollProgress: any }) => {
   const x = useTransform(scrollProgress, [0, 1], [direction === 1 ? "0%" : "-25%", direction === 1 ? "-25%" : "0%"]);
+  const smoothX = useSpring(x, { stiffness: 50, damping: 30, mass: 1.5 });
 
   return (
-    <motion.div className="flex gap-3 md:gap-4" style={{ x }}>
+    <motion.div className="flex gap-3 md:gap-5" style={{ x: smoothX }}>
       {images.map((src, i) => (
         <div
           key={i}
-          className="flex-shrink-0 w-[220px] h-[160px] md:w-[320px] md:h-[220px] rounded-lg overflow-hidden"
+          className="flex-shrink-0 w-[280px] h-[200px] md:w-[420px] md:h-[280px] rounded-lg overflow-hidden"
         >
           <img
             src={src}
@@ -88,18 +89,6 @@ const SocialProof = () => {
             <span className="font-body text-muted-foreground text-lg">/5 on Google</span>
           </div>
         </FadeUp>
-      </div>
-
-      {/* Animated Photo Collage */}
-      <div ref={collageRef} className="relative mb-14 md:mb-20 overflow-hidden">
-        {/* Fade edges */}
-        <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
-
-        <div className="flex flex-col gap-3 md:gap-4 py-2">
-          <MarqueeRow images={collageRow1} direction={1} scrollProgress={scrollYProgress} />
-          <MarqueeRow images={collageRow2} direction={-1} scrollProgress={scrollYProgress} />
-        </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -152,6 +141,17 @@ const SocialProof = () => {
             <ExternalLink className="w-3.5 h-3.5" />
           </a>
         </FadeUp>
+      </div>
+
+      {/* Animated Photo Collage */}
+      <div ref={collageRef} className="relative mt-14 md:mt-20 overflow-hidden">
+        <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+
+        <div className="flex flex-col gap-3 md:gap-5 py-2">
+          <MarqueeRow images={collageRow1} direction={1} scrollProgress={scrollYProgress} />
+          <MarqueeRow images={collageRow2} direction={-1} scrollProgress={scrollYProgress} />
+        </div>
       </div>
     </section>
   );
