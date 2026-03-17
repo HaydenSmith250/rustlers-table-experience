@@ -170,7 +170,7 @@ const Menu = () => {
       </section>
 
       {/* Sticky section nav */}
-      <nav className="sticky top-[68px] md:top-[88px] z-40 bg-card/95 backdrop-blur-md border-b border-border">
+      <nav className="sticky top-[52px] md:top-[68px] z-40 bg-card/95 backdrop-blur-md border-b border-border -mt-px">
         <div className="max-w-7xl mx-auto px-2 md:px-6 overflow-x-auto scrollbar-hide">
           <div className="flex gap-0 md:gap-1 py-2 md:py-3 min-w-max md:justify-center">
             {sections.map(({ id, label }) => (
