@@ -91,18 +91,6 @@ const SocialProof = () => {
         </FadeUp>
       </div>
 
-      {/* Animated Photo Collage */}
-      <div ref={collageRef} className="relative mb-14 md:mb-20 overflow-hidden">
-        {/* Fade edges */}
-        <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
-
-        <div className="flex flex-col gap-3 md:gap-4 py-2">
-          <MarqueeRow images={collageRow1} direction={1} scrollProgress={scrollYProgress} />
-          <MarqueeRow images={collageRow2} direction={-1} scrollProgress={scrollYProgress} />
-        </div>
-      </div>
-
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {reviews.map((review, i) => (
