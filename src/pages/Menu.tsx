@@ -276,7 +276,11 @@ const Menu = () => {
 
         <div className="border-t border-border" />
 
-        <MenuSection id="desserts" title="Desserts" subtitle="Sweet Endings" items={desserts} />
+        <MenuSection id="desserts" title="Desserts" subtitle="Sweet Endings" items={desserts}>
+          <FadeUp delay={0.3} className="mt-10">
+            <img src={foodDesserts} alt="Baileys cheesecake and carrot cake" className="w-full max-w-2xl mx-auto aspect-[16/9] object-cover" />
+          </FadeUp>
+        </MenuSection>
 
         <div className="border-t border-border" />
 
