@@ -1,6 +1,19 @@
 import { FadeUp, ScaleIn } from "./AnimatedSection";
 import { Star, Quote, ExternalLink } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+
+import foodCarrotcake from "@/assets/food-carrotcake.png";
+import foodBennies from "@/assets/food-bennies.png";
+import foodBurger from "@/assets/food-burger-new.png";
+import foodRibs from "@/assets/food-ribs-new.png";
+import foodSalad from "@/assets/food-salad.png";
+import foodSteakOverhead from "@/assets/food-steak-overhead.png";
+import foodSteakCloseup from "@/assets/food-steak-closeup.png";
+import foodBeer from "@/assets/food-beer.jpg";
+
+const collageRow1 = [foodSteakOverhead, foodBurger, foodRibs, foodSalad, foodSteakOverhead, foodBurger, foodRibs, foodSalad];
+const collageRow2 = [foodCarrotcake, foodBeer, foodBennies, foodSteakCloseup, foodCarrotcake, foodBeer, foodBennies, foodSteakCloseup];
 
 const reviews = [
   {
@@ -23,14 +36,42 @@ const reviews = [
   },
 ];
 
+const MarqueeRow = ({ images, direction, scrollProgress }: { images: string[]; direction: 1 | -1; scrollProgress: any }) => {
+  const x = useTransform(scrollProgress, [0, 1], [direction === 1 ? "0%" : "-25%", direction === 1 ? "-25%" : "0%"]);
+
+  return (
+    <motion.div className="flex gap-3 md:gap-4" style={{ x }}>
+      {images.map((src, i) => (
+        <div
+          key={i}
+          className="flex-shrink-0 w-[220px] h-[160px] md:w-[320px] md:h-[220px] rounded-lg overflow-hidden"
+        >
+          <img
+            src={src}
+            alt="Rustlers' Table food"
+            className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+            loading="lazy"
+          />
+        </div>
+      ))}
+    </motion.div>
+  );
+};
+
 const SocialProof = () => {
+  const collageRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: collageRef,
+    offset: ["start end", "end start"],
+  });
+
   return (
     <section className="py-24 md:py-32 bg-background relative overflow-hidden">
       <div className="absolute top-0 left-0 w-72 h-72 bg-gold/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <FadeUp className="text-center mb-16">
+        <FadeUp className="text-center mb-10 md:mb-14">
           <p className="font-callout text-gold tracking-[0.3em] uppercase text-sm mb-3">
             What Our Guests Say
           </p>
@@ -47,7 +88,21 @@ const SocialProof = () => {
             <span className="font-body text-muted-foreground text-lg">/5 on Google</span>
           </div>
         </FadeUp>
+      </div>
 
+      {/* Animated Photo Collage */}
+      <div ref={collageRef} className="relative mb-14 md:mb-20 overflow-hidden">
+        {/* Fade edges */}
+        <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+
+        <div className="flex flex-col gap-3 md:gap-4 py-2">
+          <MarqueeRow images={collageRow1} direction={1} scrollProgress={scrollYProgress} />
+          <MarqueeRow images={collageRow2} direction={-1} scrollProgress={scrollYProgress} />
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {reviews.map((review, i) => (
             <ScaleIn key={i} delay={i * 0.15}>
