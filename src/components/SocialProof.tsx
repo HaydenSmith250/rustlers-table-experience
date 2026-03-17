@@ -38,13 +38,14 @@ const reviews = [
 
 const MarqueeRow = ({ images, direction, scrollProgress }: { images: string[]; direction: 1 | -1; scrollProgress: any }) => {
   const x = useTransform(scrollProgress, [0, 1], [direction === 1 ? "0%" : "-25%", direction === 1 ? "-25%" : "0%"]);
+  const smoothX = useSpring(x, { stiffness: 50, damping: 30, mass: 1.5 });
 
   return (
-    <motion.div className="flex gap-3 md:gap-4" style={{ x }}>
+    <motion.div className="flex gap-3 md:gap-5" style={{ x: smoothX }}>
       {images.map((src, i) => (
         <div
           key={i}
-          className="flex-shrink-0 w-[220px] h-[160px] md:w-[320px] md:h-[220px] rounded-lg overflow-hidden"
+          className="flex-shrink-0 w-[280px] h-[200px] md:w-[420px] md:h-[280px] rounded-lg overflow-hidden"
         >
           <img
             src={src}
