@@ -1,6 +1,6 @@
 import { FadeUp, ScaleIn } from "./AnimatedSection";
 import { Star, Quote, ExternalLink } from "lucide-react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef } from "react";
 
 import foodCarrotcake from "@/assets/food-carrotcake.png";
