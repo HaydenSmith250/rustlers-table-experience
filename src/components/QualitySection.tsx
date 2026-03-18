@@ -1,5 +1,5 @@
 import { FadeUp, FadeIn } from "./AnimatedSection";
-import diningImg from "@/assets/dining-atmosphere.jpg";
+import diningImg from "@/assets/collage-steak-raw.png";
 
 const QualitySection = () => {
   return (
