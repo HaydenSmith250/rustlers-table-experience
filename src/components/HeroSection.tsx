@@ -29,9 +29,8 @@ const HeroSection = () => {
             At the Historic O'Keefe Ranch
           </p>
           <h1 className="font-display text-4xl md:text-7xl lg:text-8xl font-bold leading-[0.95] text-primary-foreground mb-4 md:mb-6">
-            Food You 
-Wont Forget<br />
-            <span className="text-gradient-gold">Shoot Later.</span>
+            Food You<br />
+            Wont Forget
           </h1>
           <p className="font-body text-base md:text-xl text-primary-foreground/80 max-w-lg mx-auto md:mx-0 mb-6 md:mb-8 leading-relaxed">
             Bold flavours, smoky favourites, and hearty meals with a rustic edge — 
