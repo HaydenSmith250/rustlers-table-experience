@@ -11,9 +11,11 @@ import foodSalad from "@/assets/food-salad.png";
 import foodSteakOverhead from "@/assets/food-steak-overhead.png";
 import foodSteakCloseup from "@/assets/food-steak-closeup.png";
 import foodBeer from "@/assets/food-beer.jpg";
+import collageBeer from "@/assets/collage-beer.png";
+import collageSteakRaw from "@/assets/collage-steak-raw.png";
 
-const collageRow1 = [foodSteakOverhead, foodBurger, foodRibs, foodSalad, foodSteakOverhead, foodBurger, foodRibs, foodSalad];
-const collageRow2 = [foodCarrotcake, foodBeer, foodBennies, foodSteakCloseup, foodCarrotcake, foodBeer, foodBennies, foodSteakCloseup];
+const collageRow1 = [foodSteakOverhead, foodBurger, collageSteakRaw, foodRibs, foodSalad, foodSteakOverhead, foodBurger, collageSteakRaw, foodRibs, foodSalad];
+const collageRow2 = [foodCarrotcake, collageBeer, foodBeer, foodBennies, foodSteakCloseup, foodCarrotcake, collageBeer, foodBeer, foodBennies, foodSteakCloseup];
 
 const reviews = [
   {

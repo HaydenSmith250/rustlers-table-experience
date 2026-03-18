@@ -12,7 +12,7 @@ import foodShortrib from "@/assets/food-shortrib.jpg";
 import foodBurger from "@/assets/food-burger.jpg";
 import foodRibs2 from "@/assets/food-ribs2.jpg";
 import foodDesserts from "@/assets/food-desserts.jpg";
-import foodDrinks from "@/assets/food-drinks.jpg";
+import foodDrinks from "@/assets/collage-beer.png";
 import cabLogo from "@/assets/cab-logo.png";
 
 const sections = [
