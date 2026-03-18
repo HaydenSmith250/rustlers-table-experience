@@ -195,13 +195,6 @@ const Menu = () => {
       {/* Menu content */}
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <MenuSection id="starters" title="Starters" subtitle="Available All Day" items={starters}>
-          <FadeUp delay={0.3} className="mt-12">
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-              <img src={foodRibs2} alt="Appetizer presentation" className="w-full aspect-[4/3] object-cover opacity-80 hover:opacity-100 transition-opacity" />
-              <img src={foodBurger} alt="Food presentation" className="w-full aspect-[4/3] object-cover opacity-80 hover:opacity-100 transition-opacity hidden md:block" />
-              <img src={foodShortrib} alt="Short rib appetizer" className="w-full aspect-[4/3] object-cover opacity-80 hover:opacity-100 transition-opacity" />
-            </div>
-          </FadeUp>
           <FadeUp delay={0.2} className="mt-8 text-center">
             <p className="font-body text-sm text-muted-foreground">Daily Soup — Bowl $10 · Cup $6</p>
           </FadeUp>
