@@ -59,7 +59,7 @@ const EventDetail = () => {
                 <Clock className="w-5 h-5 text-gold flex-shrink-0" />
                 <div>
                   <p className="font-body text-xs text-muted-foreground uppercase tracking-wider">Time</p>
-                  <p className="font-display text-foreground font-semibold">Evening</p>
+                  <p className="font-display text-foreground font-semibold">7–9 PM</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
